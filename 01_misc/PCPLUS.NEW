@@ -1,0 +1,128 @@
+PCPLUS.NEW
+Copyright (C) 1988 DATASTORM TECHNOLOGIES, INC.
+All Rights Reserved
+
+**** Additions and corrections in version 1.1B **************************
+
+PCPLUS.EXE
+
+- SENDFILE SEALINK fixed to send multiple files with a wildcard.
+- SEALINK changed to use "$" file renaming conventions.
+- Telink time/date stamp problem fixed.
+- ASCII download Ctrl-Z/append bug fixed.
+- Better file error checking on ASCII downloads.
+- Seldom encountered problem with YMODEM-G fixed.
+- Fixed send init ctrl quote request in Kermit.
+- Fixed bug with software flow control flag at startup.
+- Changed auto file lookup to handle all valid filename characters.
+- Fixed problem with default protocol after ESCing from transfer window.
+- Dialer no longer requires minimum 1 second pause between dial.
+- Host mode welcome message is now translated.
+- Fixed a bug with the GET command wrapping into the status line.
+- Fixed problem updating DOS clock when host mode rolls over midnight.
+- MENUMODE ON will not allow an ESC from a script file.
+- Repaired and enhanced various terminal emulation features involving
+  protected fields with Wyse and TeleVideo terminals.
+- VT102 now identifies itself as VT102, not VT100 with AVO.
+- Dedicated print now requires 2 ESC's locally to exit to allow users to
+  send ESC's to the remote.
+- Dedicated print now supports Alt-B to send a break.
+
+PCEDIT
+
+- Fixed the problem with 1 line block moves.
+- Numeric keypad can now be used.
+
+**** Additions and corrections in version 1.1A **************************
+
+PCPLUS.EXE
+
+- Added separate attributes in terminal mode for normal, bold,
+  low, reverse and underline.
+- Added Setup option for ANSI.SYS compatibility (see addendum).
+- Expanded length of dialing buffer from 40 to 60, even though most
+  modems will handle only 40.
+- Added SET MENUMODE ON/OFF ASPECT command (see addendum).
+- The EMULATE command will now accept both TVI9xx and TV9xx.
+- AUTOBAUD DETECT now defaults to OFF.
+- Fixed cursor positioning error under Desqview and Windows.
+- Fixed various problems displaying the status line in command files.
+- Fixed 3270 and TV9xx display attribute problems.
+- Fixed Backspace error with masked fields.
+- Fixed return values of KEYGET for control characters.
+- Fixed error with ASCII upload blank line expansion and Wordstar files.
+- Fixed Backspace error in command files.
+- Fixed Elapsed Time (Alt-T) and PCPLUS.FON time calculations.
+- Fixed enhanced keyboard problems with help menu.
+- Fixed problem of some file transfers eating ^Z at end of file.
+- ^Z no longer clears the screen in TTY emulation.
+- Fixed format problem displaying directories in Alt-F.
+- Removed screen dump (Alt-G) from redisplay--use write to file.
+- Changed default color of status line highlight.
+- Fixed ASPECT file handling of blank lines to avoid error 9s.
+- Fixed display handling under multitaskers.
+- Fixed Kermit checksum problems with type 2.
+- Changed SET DISPLAY OFF to stop all display from remote.
+- Host now sends init string after A)bort command.
+- Host mode chat mode sends each character as typed, not a line at a time.
+- Fixed various redisplay problems.
+- Redisplay uses WRAP option in its display.
+- Changed time formatting so that midnight is 12:00AM, not 00:00AM
+  with 12 hour clock.
+- Fixed error in autobaud routine that caused CONNECT 19200 to
+  signal CONNECT 1200.
+- Fixed ANSI processing of .NWS file.
+
+**** Additions and corrections in version 1.1 ***************************
+
+PCPLUS.EXE
+
+- EGA washout problem removed.
+- Fixed internal memory problem causing errors with external programs
+  and redisplay.
+- Extra CR/LF in half duplex fixed.
+- CIS Quick B protocol supported.
+- Fixed error using keypad digits in some menus.
+- "CANNOT OPEN FILE" error in Kermit uploads fixed.
+- DIAL ASPECT command correctly sets default terminal and protocol.
+- Alarm rings when connected after dialing.
+- Response improved when cycling or aborting during dialing.
+- Quicker hangups between calls when dialing.
+- Added SORTDIR program to sort directories.
+- ASPECT file selection window restored.
+- Added DLOAD "filename" ASPECT command for loading dialing directories.
+- Added SET DISPLAY ON|OFF command to control display of incoming
+  characters during WAITFOR and RGET commands.
+- Made the pause character (default=~) user settable.
+- Added option to strip high bit during ASCII transfers.
+- Added up- and download directories for host mode.
+- Added option to send init string when CD is found (default = YES).
+- Moved the ABORTED DOWNLOADs option to Protocol Options in Setup.
+- Altered comm port addresses to accept 4 hex digits for PS/2.
+- Added support for the enhanced keyboard.
+- "ERROR 10" when using SENDFILE and some protocols fixed.
+- XMODEM last block padded with ^Z, not nulls.
+- SEALINK download name error repaired.
+- ANSI dedicated print functions repaired.
+- Added ANSI sequence support to TV 955.
+- Added dedicated print functions to TV terminals.
+- Miscellaneous repairs/additions to TV and Wyse terminal emulations.
+- Fixed format in .FON problem.
+- Updated .HLP file for new functions.
+- Ctrl-S sends XOFF without no scroll function (Alt-N).
+- Removed pause displaying "**BREAK**" message so you can send
+  multiple breaks close together.
+- Added PCPLUS.HHP file to supplemental disk as specified in manual.
+- Fixed character insert with text in column 80 error.
+
+PCKEYMAP.EXE
+
+- Added enhanced keyboard support, and additional keys.
+- Ctrl-^ processing added.
+
+PCEDIT.EXE
+
+- Fixed problem with END key in col 80.
+- Reads .PRM file to check for SNOW REMOVAL option.
+- Fixed lost cluster problem.
+

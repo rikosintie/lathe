@@ -1,0 +1,35 @@
+PROCOMM PLUS version 1.1B - Intuitive Communications Software
+Supplemental Diskette
+
+Copyright (C) 1987, 1988 DATASTORM TECHNOLOGIES, INC.
+All Rights Reserved
+
+This diskette should contain the following files:
+
+Utility programs
+
+PCKEYMAP.EXE   - The PROCOMM PLUS Keyboard Mapping Facility
+PCMAIL.EXE     - Utility for handling host mode mail offline
+SORTDIR.EXE    - Dialing directory sort routine
+TEF.EXE        - Timed Execution Facility
+DT_PATCH.EXE   - Program for applying Datastorm supplied patches
+DT_PATCH.DOC   - Description of DT_PATCH.EXE
+
+Sample ASPECT script files.
+
+PCBOARD.ASP    - Sample logon for PCBOARD BBS
+RBBS.ASP       - Sample logon for RBBS BBS
+RBBS13.ASP     - Sample logon for RBBS13 BBS
+COLOR.ASP      - Displays color display attributes
+
+Other files
+
+README.TOO     - This file
+PCPLUS.NEW     - A list of corrections and additions
+ADDENDUM       - Additions and changes to the manual
+PCPLUS.HHP     - Sample host mode online help file
+
+*.PIF          - Topview/Windows program information files
+
+USBBS.LST      - List of BBS systems in the US
+

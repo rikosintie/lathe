@@ -1,0 +1,126 @@
+
+PROCOMM PLUS HOST MODE HELP
+
+
+Every user is presented the following menu after successfully logging
+on and viewing the optional news file.
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³   F)iles  U)pload  D)ownload      ³
+³   H)elp  T)ime  C)hat  G)oodbye   ³
+³   R)ead mail  L)eave mail         ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+If the user has superuser status, then the following line is added to
+the prompt:
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³   S)hell  A)bort                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+An available function is invoked by pressing the first letter of the name.
+No carriage return is needed so to download, for example, just press <D>.
+
+
+
+
+Function Description
+
+*   ABORT:      Terminates user and exits host mode.  This has the same
+                effect as pressing ESC on the host keyboard.  The
+                user is asked whether on not he would like to disconnect
+                the line.
+
+*   CHAT:       Sounds the speaker on the host machine (unless alarm
+                sound has been turned off in the general setup) and
+                waits for F1 to be hit on the host keyboard.  If the
+                host operator presses F1, the host machine is placed into
+                chat mode (identical to regular chat mode).  If any other
+                key is pressed on the host keyboard, paging is stopped and
+                a message is sent to the user.  A user can abort a page
+                request by pressing Ctrl-C.
+
+    DOWNLOAD:   The user is prompted for a protocol to use and then for
+                the specification of the file(s) to download from the
+                host.  If the user is a super-user, a path may be
+                included in the specification, otherwise, only files in
+                the Host download directory (or the current directory if
+                there isn't a download directory defined) are allowed.
+                When a valid file specification is entered, the message
+                "Begin your  ???????  transfer procedure"  is issued and
+                the host waits for the user to download the file(s) using
+                the specified protocol.
+
+    FILES:      Prompts for a file specification (like DOS' DIR command)
+                and displays a list of matching downloadable files.
+                A user can cancel the file display by pressing Ctrl-C.
+                Superusers can view any directory by including a path in
+                the file specification.
+
+    GOODBYE:    Terminates user and recycles the host to answer the next
+                call.
+
+    HELP:       Displays the ascii text file: PCPLUS.HHP if it exists.
+                The help file is searched for in the current directory
+                first and then in the environment directory (if one
+                exists).  A user can cancel the help display by pressing
+                Ctrl-C.
+
+    LEAVE MAIL: The user is prompted for the following:
+                To:                  (the intended recipient of the mail)
+                Re:                  (the subject of the mail)
+                Private Mail(Y/N)    (Y to limit viewing, N for public)
+
+                The user is then placed in a line-at-a-time input mode
+                which continues until an empty line is entered.  When an
+                empty line is entered, the user is prompted with:
+                S)ave  A)bort  D)isplay  C)ontinue  ?
+                  Save:       Append the message to the mailbase and return
+                              to the main menu.
+                  Abort:      Erase the message and return to the main menu
+                              (after confirmation).
+                  Display:    Show any text which has been entered (using
+                              the same format as the Read Mail facility)
+                              and display this prompt again.
+                  Continue:   Return to input mode.
+
+    READ MAIL:  The user is prompted to choose one of the following:
+
+                  F)orward read
+                  S)earch mail
+                  I)ndividual read
+                  Q)uit
+
+                  Forward read:  Sequential multiple read.
+                                 Prompts for the message number to
+                                 begin displaying and begins to
+                                 display all accessable messages
+                                 starting with that number.
+                  Search mail    Selective sequential multiple read.
+                                 Asks for a field to search, then a
+                                 string to search for, and finally what
+                                 message number to begin the search
+                                 with. A display of all accessable
+                                 messages which match the search
+                                 criteria is then begun.
+                  Individual:    Single message read.
+                                 Asks which message to read and
+                                 displays it if accessable.
+                  Quit:          Return to the main menu.
+
+*   SHELL:      (Same as ProComm 2.4.2)
+
+    TIME:       The time the user came online is displayed, followed by
+                the current time.
+
+    UPLOAD:     The user is prompted for a protocol to use for the
+                transfer.  A file specification is then asked for,
+                followed by a file description.  The host then waits for
+                the user to begin using the specified protocol to upload
+                the file(s).  Files are placed in the Host mode upload
+                directory if one has been specified (in the Host mode
+                setup) or in the current directory otherwise.  Superusers
+                can upload to other directories if they use a protocol
+                that doesn't transfer filenames, like Xmodem, and specify
+                a path with the name.
+
+* requires super-user status (privilege = '1')
+

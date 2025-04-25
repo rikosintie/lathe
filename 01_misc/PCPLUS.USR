@@ -1,0 +1,4 @@
+LAST;FIRST;PASSWORD;0   * Sample entries for the user file.  Be sure *
+DOE;JOHN;SALLY;0        * to erase these entries before going online *
+USER;JOE;HEIDI;0        * in host mode                               *
+DFDFG;DSFDFGN;N;0; * NEW USER *

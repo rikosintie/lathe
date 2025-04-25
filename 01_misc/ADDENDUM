@@ -1,0 +1,559 @@
+PROCOMM PLUS - Addendum to the User's Manual
+
+Copyright (C) 1988 DATASTORM TECHNOLOGIES, INC.
+All Rights Reserved
+
+The following additions and corrections apply to
+PROCOMM PLUS version 1.1A.
+
+Corrections:
+
+-    Page 73 of the manual indicates that the maximum length of a dial
+     command, including dialing codes, is 40 characters.  With version 1.1A,
+     that length has been expanded to 60 characters.
+-    Page 96 - FULL and HALF DUPLEX messages are not displayed.  The status
+     line will indicate the current duplex setting.
+-    PROCOMM PLUS now lets you remap 79 keys for each of the supported
+     emulations, rather than the 61 reported on pages 101, 104, 157 and 159.
+-    Page 111 - The redisplay buffer now holds 10000 characters.  In
+     addition, Screen Snapshot is no longer supported.  Use the [W] command
+     to write the buffer to disk.
+-    The default for Autobaud Detect is OFF, not ON as described on page 133.
+-    The section on Terminal Options beginning on page 137 should be entitled
+     Terminal General Options, the first menu choice after selecting Terminal
+     Options from the main Setup menu.
+-    The option Aborted Downloads described on page 142 has been moved to
+     the Protocol Options screen.
+-    The Files/Paths Option Default Path for Downloaded Files is no longer
+     used by Host Mode, as there is a separate option specifically for Host
+     Mode in the Host Mode Options screen.
+-    There is no longer a Color Option for the Communications Screen
+     (Terminal Mode) as indicated on pages 151 and 152.  Terminal colors now
+     have their own menu as the second menu choice after selecting Terminal
+     Options from the main Setup menu.
+-    The discussion on pages 167-171 regarding access to the current
+     directory in Host is only applicable if no specific Download Directory
+     has been specified in Host Mode Options screen of the Setup facility.
+-    A note on page 172 indicates that the S)hell option is available only
+     for COM1 and COM2.  COM3 and COM4 are also supported if you are using
+     DOS 3.3 or above.
+-    Chat Mode in Host Mode is now character oriented rather than line
+     oriented as described on page 173.  That is, each character is sent as
+     it is pressed, rather than waiting for the [CR] to send the whole line.
+-    When using the ISFILE ASPECT command as described on page 228, you may
+     include a path specification with the filename.
+-    The SOUND command described on page 248 accepts the duration argument
+     in hundreds of a second, rather than milliseconds.  Thus the example
+     SOUND 440 500 will sound and "A" for 5 seconds, not 1/2 second.
+-    The WHEN command described on page 258 remains in effect until a CWHEN
+     command or another WHEN command is issued.
+-    Control of the ANSI terminal emulation as described on page 301
+     conforms to the DOS 2.x or DOS 3.x ANSI.SYS device driver depending
+     upon the setting of the ANSI Compatibility option on the General
+     Options screen of the Setup facility.
+
+Additions:
+An additional ASPECT script command has been created.
+
+     SET MENUMODE ON|OFF controls how the keystrokes are processed during
+     script file execution.  With MENUMODE OFF, the default, keystrokes are
+     passed to the terminal processor, where they are handled like usual.
+     With MENUMODE ON, keystrokes are held in the keyboard buffer for
+     processing by the script file.  For example, if you press [PgDn] within
+     a script file with MENUMODE OFF, the File Download window will appear,
+     just like in Terminal Mode.  With MENUMODE ON, however, the keystroke
+     waits in the buffer until processed by a KEYGET or similar command.  SET
+     MENUMODE ON is handy for programmers developing menu'd applications
+     where you want to limit the users choices of options.
+
+One ASPECT command has been modified.
+
+     The SET DISPLAY ON/OFF previously controlled display of incoming
+     characters only during a WAITFOR or RGET command.  SET DISPLAY OFF now
+     suppresses display of all incoming characters.
+
+Several Setup options have been added to give you better control over your
+on-line sessions.
+
+     In the General Setup there is now an option called "ANSI Compatibility"
+     which controls PROCOMM PLUS' ANSI emulation.  You may set PROCOMM PLUS
+     to conform to the DOS 2.x ANSI.SYS driver, or the DOS 3.x ANSI.SYS
+     driver.  In 2.x mode, clear screen and erase end of line commands clear
+     to white on black.  In 3.x mode, they clear to the current colors.  This
+     setting has nothing to do with the version of DOS you are using, as
+     PROCOMM PLUS does not use the ANSI.SYS driver.  Rather it controls how
+     PROCOMM PLUS interprets incoming ANSI screen control sequences.  If you
+     notice that BBS graphics screens are not displaying as you expect, try
+     changing this option.
+
+     Control of terminal mode colors has been broken out of the Color Option
+     menu and given a menu of its own.  Select Terminal Options, then Color
+     Options to access.  5 display attributes are now available for use by
+     the terminal emulations: normal, high, low, reverse and underline.  Note
+     that not all emulations use all of the available attributes.  To change
+     an attribute, press the letter corresponding to that attribute. Then
+     enter the number of the desired color from the list.  The window to the
+     right will display the attributes as currently selected.
+
+The Redisplay option has had an additional capability added.  Press [W] when
+in Redisplay (Alt-F6) to write the contents of the redisplay buffer to a disk
+file.  Screen Snapshot (Alt-G) in Redisplay is no longer supported.
+The following additions and corrections apply to
+PROCOMM PLUS version 1.1.
+Corrections:
+
+-    The keys to press in the Line Settings Menu (Alt-P) have changed.  The
+     new values are obvious from the menu itself, but the discussion of
+     those keys on page 21 and pages 124-125 is now inaccurate.
+-    The ABORTED DOWNLOADS item in Setup General Options (page 142) has been
+     moved to the Protocol Options menu.
+-    Page 202 refers to a MATSAY command which does not exist.
+-    The following ASPECT commands are not documented:
+
+     SET DUPLEX FULL|HALF               Sets the duplex mode.
+     REDIAL                             Redial numbers in the dialing queue.
+     SENDFILE SEALINK "filename"|Sx     (page 242)
+
+-    The summary of disk and file commands on page 185 should include FREAD,
+     which reads a block of data from the input file (see pg. 218).
+-    The summary of string commands on page 186 should include STRFMT, which
+     creates a formatted string (see pg. 249).
+-    References in the manual to TeleVideo terminals as TVI9xx should be
+     replaced with TV9xx.
+-    The script file example on page 189 is for an older version of PC
+     Pursuit and will not function as written.  A corrected script file for
+     accessing PC Pursuit is provided on the supplemental disk.
+-    The discussion of files placement and up- and downloading in Host Mode
+     in chapter 9 is somewhat inaccurate due to additions discussed below.
+     Corrections are as follows:
+
+          Page 164, Directory for Downloaded Files: This paragraph
+          should be deleted.  Files uploaded to Host mode are
+          placed in the directory specified as the "Upload
+          Directory" in the Host Mode Options section of the Setup
+          Facility.
+
+          Page 165, additions: Download Directory:  This is the
+          directory that you wish users to have access to for the
+          F)iles and D)ownload commands.  Upload Directory:  This
+          is the directory where files upload to Host mode will be
+          placed.
+
+          Page 168, first bullet: Users will be allowed access to
+          the current  directory only if a Download Directory is
+          not specified in Setup.
+
+          Page 168, second to last bullet: Same as above.
+
+          Page 170, Files: This command displays a list of files in
+          the  specified Download Directory or, if no Download
+          Directory has been named, in the current directory.
+          Users are prompted for a filespec to list.  Users may see
+          all files by pressing [Enter].
+
+          Page 170, Upload/Download: Files are transferred to or
+          from the current directory only if you have not named
+          specific Upload and Download directories.
+-    The following keyboard mapping table should replace that for the
+     3270/950 emulation on pages 310-311.
+PCPLUS KEY                    3270 Function       TRANSMITTED CODES
+---------------------------------------------------------------
+Enter                         Enter               ^M
+Keypad+                       Clear               ^Z
+or *Keypad Enter
+or Ctrl-Home
+Ctrl-F5                       PA1                 ^A,^M
+Ctrl-F6                       PA2                 ^A.^M
+Ctrl-F7                       PA3                 ^A/^M
+Del                           Delete Character    Del (ASCII 127)
+or Ctrl-Backspace
+or *Grey Del
+Ins                           Toggle insert-mode  ^[E
+or *Grey Ins
+End                           Erase end-of-field  ^[R
+or Ctrl-End
+or *Grey Del
+Ctrl-F8                       Erase input         ^[^[R
+Cursor Up                     Cursor Up           ^K
+or *Grey Cursor Up
+Cursor Down                   Cursor Down         ^V
+or *Grey Cursor Down
+Cursor Left                   Cursor Left         ^H
+or *Grey Cursor Left
+Cursor Right                  Cursor Right        ^L
+or *Grey Cursor Right
+Home                          Home                 ^^ (ASCII 30)
+or *Grey Home
+F1                            PF1                 ^A@^M
+F2                            PF2                 ^AA^M
+F3                            PF3                 ^AB^M
+F4                            PF4                 ^AC^M
+F5                            PF5                 ^AD^M
+F6                            PF6                 ^AE^M
+F7                            PF7                 ^AF^M
+or* Grey PgUp
+F8                            PF8                 ^AG^M
+or *Grey PgDn
+F9                            PF9                 ^AH^M
+F10                           PF10                ^AI^M
+*F11                          PF11                ^AJ^M
+or Shift-F1
+*F12                          PF12                ^[Q
+or Shift-F2
+Shift-F3                      PF13                ^A`^M
+Shift-F4                      PF14                ^Aa^M
+Shift-F5                      PF15                ^Ab^M
+Shift-F6                      PF16                ^Ac^M
+Shift-F7                      PF17                ^Ad^M
+Shift-F8                      PF18                ^Ae^M
+Shift-F9                      PF19                ^Af^M
+Shift-F10                     PF20                ^Ag^M
+Ctrl-F1                       PF21                ^Ah^M
+or *Shift-F11
+Ctrl-F2                       PF22                ^Ai^M
+or *Shift-F12
+Ctrl-F3                       PF23                ^Aj^M
+Ctrl-F4                       PF24                ^[q
+Ctrl-F9                       Column Tab          ^I
+Ctrl-F10                      Column Backtab      ^[I
+Ctrl-PgUp                     Indent              ^[Y
+Ctrl-PgDn                     Undent              ^[y
+Tab                           Field Tab           ^[T
+Backtab(Shift-Tab)            Field Backtab        ^[t
+Ctrl-J                        Newline             ^J
+or Ctrl-Enter
+Ctrl-X                        Type-ahead purge    ^X
+Ctrl-S                        Pacing Start        ^S
+Ctrl-Q                        Pacing Stop         ^Q
+Ctrl-T                        Keyboard unlock     ^T
+Ctrl-R                        Char-error reset    ^R
+Ctrl-G                        Master reset        ^G
+Esc *                         Redisplay           ^[*
+* This key available on the 101 key enhanced keyboard only.
+-      The following keyboard mapping table should replace that for the Wyse
+       50 emulation on page 308.
+PROCOMM PLUS supports the standard Wyse 50 functions. Supported functions
+include: full/half duplex, program function keys, cursor control, erase
+functions, protected fields and full display attributes.
+
+PCPLUS KEYS                   WYSE 50 FUNCTION    TRANSMITTED CODES
+---------------------------------------------------------------
+Tab                           Horizontal Tab      09
+Backtab                       Reverse Tab         1B 49
+Insert                        Insert Character    1B 51
+Ctrl-Home                     Insert Line         1B 45
+Delete                        Delete Character    1B 57
+Ctrl-PgUp                     Delete Line         1B 52
+Home                          Home Cursor         1E
+Cursor Up                     Cursor Up           1B
+Cursor Down                   Cursor Down         16
+Cursor Left                   Cursor Left         18
+Cursor Right                  Cursor Right        0C
+Ctrl-PgDn                     Clear Screen        1A
+End                           Line Erase          1B 54
+Ctrl-End                      Page Erase          1B 59
+F1                            Function 1 (F1)     01 40 0D
+F2                            Function 2 (F2)     01 41 0D
+F3                            Function 3 (F3)     01 42 0D
+F4                            Function 4 (F4)     01 43 0D
+F5                            Function 5 (F5)     01 44 0D
+F6                            Function 6 (F6)     01 45 0D
+F7                            Function 7 (F7)     01 46 0D
+F8                            Function 8 (F8)     01 47 0D
+F9                            Function 9 (F9)     01 48 0D
+F10                           Function 10 (F10)   01 49 0D
+*F11                          Function 11 (F11)   01 4A 0D
+or Shift-F1
+*F12                          Function 12 (F11)   01 4B 0D
+or Shift F2
+Shift-F3                      Function 13 (F13)   01 4C 0D
+Shift-F4                      Function 14 (F14)   01 4D 0D
+Shift-F5                      Function 15 (F15)   01 4E 0D
+Shift-F6                      Function 16 (F16)   01 4F 0D
+Ctrl-F1                       Shift Line Erase    1B 74
+Ctrl-F2                       Shift Page Erase    1B 79
+Ctrl-F3                       Shift Line Insert   1B 4E
+Ctrl-F4                       Shift Line Delete   1B 4F
+Ctrl-F5                       Shift Char Insert   1B 71
+Ctrl-F6                       Shift Char Delete   1B 72
+Alt-F10                       FUNCT See below
+
+* This key available on the 101 key enhanced keyboard only.
+
+To emulate the FUNCT key operation, press and release [Alt-F10], then press
+and release the key you wish to use in conjunction with FUNCT. This will
+send the standard 3 byte FUNCT sequence: <SOH> <key pressed> <CR>.
+Additions:
+Several Setup options have been added.
+
+       The pause translation character (see page 291) which was previously
+       hard coded to be a tilde (~), is now user settable via General Options
+       in Setup.
+
+       An option to strip the 8th bit during ASCII file transfers has been
+       added to the ASCII Transfer Options menu.  Setting this option to YES
+       causes PROCOMM PLUS to automatically strip the 8th bit from characters
+       being sent or received during ASCII file transfers.
+
+       Modem General Options now has a item that controls if the
+       initialization string is sent if CD is found high at program startup.
+       You might want to set this to NO if, for instance, you intend to exit
+       PROCOMM PLUS without disconnecting and you wish to return to your on-
+       line session without sending the init string.
+
+Several changes have been made to the Host mode.
+
+       Most significant is the addition of user specified up- and download
+       paths (specified via Host Options in the Setup Facility).  Normal
+       (non-super) users can only download files residing in the host
+       download directory and the F)iles command will only list files in that
+       directory.  Superusers may download from any directory and they may
+       upload to any subdirectory (if the protocol doesn't transfer the file
+       name internally).  By default, all files received by the host will be
+       placed in the host upload directory.  CAUTION: If you fail to define
+       these Host directories before using Host mode, any caller can download
+       files from, or upload files to the current directory.
+
+       Host mode F)iles command now prompts for a file spec (same as DIR)
+       (Normal users can only supply NAME.EXT, superusers can use paths).
+
+       The Host mode message to begin remote transfer now contains the
+       protocol name.
+
+       Host mode pauses after displaying initialization error message(s).
+
+       Host S)hell command accepts COM3 and COM4 as devices if DOS version
+       is 3.3 or higher.
+
+PROCOMM PLUS' support of CompuServe's CIS B protocol now includes support
+for QUICK B as well.
+
+A sorting routine for dialing directories is now included on the
+supplemental diskette.  To use it, enter
+
+   SORTDIR [dirname]
+
+at the DOS prompt.  If "dirname" is not specified it will default to
+PCPLUS.DIR.  You should not use this program via PROCOMM PLUS' DOS gateway.
+
+A selection window for ASP files has been added to the Alt-F5 option (see
+page 180).  By pressing [Enter] at the filename prompt, you will be
+presented with a list of .ASP files in the current directory.  If no .ASP
+files exist there, the PROCOMM PLUS will display .ASP files in the directory
+pointed to by the PCPLUS= environment variable.  If no .ASP files are found
+in either location, the message "NO ASP FILES" will be displayed.  To select
+a file for execution, use the up and down arrow keys to position the
+highlighted bar on the desired file and press [Enter].  The [PgUp] and
+[PgDn] will page the display up or down.  The [Home] key will take you to
+the first page of entries; the [End] key will take you to the last.
+Two additional ASPECT commands have been created.
+
+       SET DISPLAY ON|OFF controls whether or not characters received from
+       the remote during the execution of a WAITFOR or RGET command are
+       displayed.  Use this option to inhibit display of incoming characters
+       in menu driven .ASP files and the like.
+
+       DLOAD "filename" will load an alternate dialing directory.  Specify a
+       directory name without the .DIR extension, i.e. MLOAD "atlanta".
+Technical Bulletin PP002
+Upgrading ProComm 2.4.2 to PROCOMM PLUS
+Converting an existing ProComm 2.4.2 installation to PROCOMM PLUS is a
+relatively simple task.  Some files may be used without modification, some
+will need to be changed, and some must be recreated.
+
+ProComm keyboard macro (.KEY) and translate table (.XLT) files may be used
+without modification.  Simply rename PROCOMM.KEY to PCPLUS.KEY, and
+PROCOMM.XLT to PCPLUS.XLT.
+
+If you are using a host mode welcome file (PROCOMM.MSG), rename it to
+PCPLUS.NWS.  PCPLUS.MSG is used to store host mode mail messages.
+
+The dialing directory file structure has changed completely, so PROCOMM.DIR
+must be converted.  To do so, run the supplied convert program CVTDIR.EXE.
+This program will transfer your existing entries from PROCOMM.DIR to
+PCPLUS.DIR.
+
+The parameter file structure has also changed, but no convert routine is
+supplied. Begin by reviewing (or printing) the setup options you have
+specified within ProComm.  Now execute the PROCOMM PLUS setup facility and
+compare its defaults to what you used with ProComm and make any pertinent
+changes.  Please note one change: ProComm used several "output translation
+characters" which PROCOMM PLUS does not support.  The non-supported
+characters are the exclamation point (!) for a carriage return, and the
+vertical bar (|) for an escape. The caret (^) for a control character and
+tilde (~) for a pause are still supported. In PROCOMM PLUS, use a Ctrl-M
+(^M) in place of the exclamation point to send a carriage return;  use Ctrl-
+left bracket (^[) to send an escape.
+
+ProComm command files (*.CMD) are easily converted to PROCOMM PLUS ASPECT
+command files.  Begin by renaming all .CMD files to .ASP files (REN *.CMD
+*.ASP).  Within those files make two changes.  First, make sure that all
+command keywords are completely spelled out.  PROCOMM PLUS does not support
+abbreviated keywords.  Secondly, change all the output translation
+characters as described above.
+
+In addition, several script commands have changed:
+
+-      SET BACKSPACE IN DEST|NONDEST is now SET BACKSPACE DEST|NONDEST.
+-      SET BACKSPACE OUT is no longer supported.  Use PCKEYMAP to assign the
+       output value for the backspace key.
+-      SET CR_IN CR|CR_LF is now SET CR CR|CR_LF.
+-      SET CR_OUT is no longer supported.  Use PCKEYMAP to assign the output
+         value for the Enter key.
+-      SET FLOWCTRL ON|OFF is now SET SOFTFLOW ON|OFF.
+
+After making these simple changes you should be off and running with PROCOMM
+PLUS.
+Technical Bulletin PP001
+Using external file transfer protocols with PROCOMM PLUS
+PROCOMM PLUS includes internal support for a wide variety of file transfer
+protocols.  In addition, it provides "hooks" to allow you to access external
+programs which support other protocols.  Six hooks are provided: three for
+uploading and three for downloading.
+
+External protocol programs are specified within PROCOMM PLUS via the
+Protocols Options section of the Setup facility.  To add an external
+protocol, enter the Setup facility by pressing [Alt-S] from PROCOMM PLUS'
+terminal mode. Now press [P] to select protocol options.
+
+Options A-F on the Protocol Options Menu are used to tell PROCOMM PLUS what
+external programs to use.  For example, to set up PROCOMM PLUS to use ZMODEM
+as external protocol 1, enter ZMODEM-U as the choice for uploading (option
+A) and ZMODEM-D for downloading (option B).  The names entered here will be
+displayed in the protocol selection window after pressing PgUp or PgDn to
+transfer a file.  They will also be the programs called by PROCOMM PLUS to
+perform those transfers.
+
+When you select an external protocol from the protocol selection window
+(choices 14-16) you will be prompted for parameters which are passed along
+to the external program.
+
+It is often convenient to use DOS .BAT files when specifying external
+protocols. In the example above the actual program used to perform ZMODEM
+up- and downloads is called DSZ.EXE.  DSZ accepts numerous command options,
+most of which do not change between uses.  By using a batch file you spare
+yourself the trouble of entering the necessary options each time you perform
+a ZMODEM transfer.  For example, ZMODEM-D refers to a batch file called
+ZMODEM-D.BAT. It contains the following line:
+
+   DSZ rz C:\DL
+
+This line calls DSZ and tells it to receive a file using ZMODEM (rz) and
+create the file(s) in the directory C:\DL.  Since the filename is passed
+from the sending system in ZMODEM transfers, you may just press [Enter] at
+the parameters prompt.
+
+Uploading is a little trickier, but not much.  In that case you must let DSZ
+know which file(s) to upload.  You can do that by specifying the name of the
+file(s) to upload when prompted by PROCOMM PLUS for ZMODEM-U parameters.
+Whatever you enter is then passed to ZMODEM-U.BAT when it is called.  By
+including the line
+
+   DSZ sz %1 %2 %3 %4 %5 %6 %7 %8 %9
+
+in ZMODEM-U.BAT, the filenames are passed to DSZ via the % batch file
+variables.
+
+The 2 .BAT files and DSZ.EXE should be placed in a directory included in
+your PATH.  Also note that files downloaded using external protocols will not
+automatically be placed in the default download dierectory specified in the
+FILE/PATH OPTIONS screen of the Setup facility.
+The same techniques may be used for specifying other programs to call for
+performing external protocol transfers.
+
+[NOTE: DSZ is a user-supported program developed and supported by Chuck
+Forsberg.  It is available as DSZ.ARC on many BBS and on-line services
+around the country.  Non-registered users of DSZ are granted a license to
+use the program for a limited evaluation period.  Regular use requires
+registration ($20.00 check) to :   Omen Technology Inc.
+                                        PO Box 4681
+                                        Portland, OR 97231
+More information on DSZ may be found in DSZ.DOC, part of DSZ.ARC.]
+The following additions and corrections apply to the PROCOMM PLUS User's
+Manual for version 1.0.
+Additions:
+------------------------------------------------------------------------
+-      An editor has been included with PROCOMM PLUS.  The editor program,
+       called PCEDIT.EXE, is a small, fast text editor suitable for use
+       writing ASPECT scripts and the like.  It is provided as a separate
+       executable file called via the [Alt-A] editor command.  It may be run
+       standalone as well with a command of the form "PCEDIT filename [/b]".
+       The optional "/b" parameter causes the editor to operate in black and
+       white rather than color for composite monitors.  Help for PCEDIT may
+       be obtained by pressing [Alt-Z] from within the program.
+
+-      The Redisplay buffer has an additional command: W (Write file).  When
+       selected, the contents of the Redisplay Buffer will be written to a
+       disk file of the specified name.
+
+The ASPECT script language has the following additional commands:
+
+-      IF [NOT] HITKEY
+
+       The HITKEY condition of the IF command will test TRUE if a key has
+       been pressed and remains in the input buffer.  For example, in the
+       following code fragment, execution will loop endlessly until a key is
+       pressed.
+
+   WAIT:
+   IF NOT HITKEY
+      GOTO WAIT
+   ENDIF
+
+-      KEYGET Sx
+
+       The KEYGET command gets from the user's console a single key, and
+       places it in the specified string variable.  This command allows you
+       to get a single keystroke without requiring that [Enter] be pressed.
+       The characters placed in the string variable depend upon the key
+       pressed. For printable characters (ASCII values 32 through 126) the
+       actual character is used.  For other keys, the scan code in hex is
+       placed in the variable.  To determine what is returned by a given key,
+       use the following ASPECT commands:
+
+   TOP:
+   ATSAY 10 10 31 "Press any key: "
+   LOCATE 10 25
+   KEYGET S0
+   ATSAY 11 25 31 "    "
+   FATSAY 11 10 31 "The value was: %s" S0
+   GOTO TOP
+
+       This command is very handy for building menus and the like where you
+       can SWITCH on the key pressed to perform a given function.
+
+-      IF [NOT] relation Nx Ny|integer
+       The IF relation commands tests for some arithmetic relation between
+       two numeric variables or a numeric variable and an integer constant.
+       The valid relations are:
+
+   GT - Greater than (Nx > Ny ?)
+   LT - Less than (Nx < Ny ?)
+   GE - Greater than or equal to (Nx >= Ny ?)
+   LE - Less than or equal to (Nx <= Ny ?)
+   EQ - Equal to (Nx = Ny ?)
+
+       For example, the following code segment tests if the value of N1 is
+       equal or greater to 25, and branches to a subroutine if it is.
+
+   IF GE N1 25
+      GOSUB SUB1
+   ENDIF
+
+       An additional IF condition has been added: MONO.  For example, in the
+       following code fragment, the CLEAR command will be executed if a
+       monochrome monitor is detected.
+
+   IF MONO
+      CLEAR 7
+   ENDIF
+
+       Most ASPECT script commands have been modified to accept numeric
+       variables as well as constants for the ROW, COL and ATTRIB parameters.
+       For example, you may now use commands such as:
+
+       ATSAY N1 N2 N3 "Use variable row, column and attrib"
+       ATGET N1 N2 N3 N4 S0
+       etc
+
+

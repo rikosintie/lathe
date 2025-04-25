@@ -1,0 +1,302 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           MCI MAIL(tm) ACCESS SYSTEM
+
+                                       for
+
+                                PROCOMM PLUS(tm)
+
+
+
+
+
+
+                                   Version 1.0
+                                  July 14, 1988
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Copyright (C) 1988 DATASTORM TECHNOLOGIES, INC.
+    All Rights Reserved
+                                  INTRODUCTION
+
+    Greetings!  Welcome to the PROCOMM PLUS MCI Mail Access System, a series
+    of PROCOMM PLUS ASPECT command files designed to ease your access to MCI
+    Mail.
+
+    First off, a hearty Thank You! for purchasing PROCOMM PLUS.  We're glad
+    you're using our product.  It is our hope that this system will enhance
+    your use of PROCOMM PLUS while providing some insight and instruction
+    into PROCOMM PLUS' extremely powerful script command language, ASPECT.
+
+    You'll notice that this product carries the DATASTORM TECHNOLOGIES, INC.
+    copyright.  We do reserve that copyright, however you may use this
+    product without charge for whatever you want, as long as each copy of
+    PROCOMM PLUS that is using this system is a fully licensed and paid for
+    version.
+
+    We'd be glad to hear your feedback, suggestions for improvements and to
+    see enhancements you've added to increase its capabilities or
+    performance.  Send feedback to us at DATASTORM on MCI Mail, at
+    72477,2155 on CompuServe, or by mail to:
+
+               DATASTORM TECHNOLOGIES, INC.
+               PO Box 1471
+               Columbia, MO 65205
+
+    We hope you enjoy the PROCOMM PLUS MCI Mail Access System!
+
+    July 14, 1988
+                               SYSTEM DESCRIPTION
+
+    The PROCOMM PLUS MCI Mail Access System is a series of PROCOMM PLUS
+    ASPECT command files which provide a structure for composing, sending
+    and retrieving electronic mail messages from MCI Mail.
+
+    The system requires PROCOMM PLUS version 1.1a or above and a modem. 
+    Other than that no particular hardware or software is needed.
+
+
+    SYSTEM FILES
+
+    The system is composed of the following ASPECT command files:
+
+     MCI.ASP        The calling routine, this file performs system
+                    initialization.
+     PCPMCI1.ASP    The main polling loop which calls the following files.
+     PCPMCI2.ASP    This files contains the log-on, message retrieval and
+                    message sending routines.
+     PCPMCI3.ASP    A simple help facility.
+     PCPMCI4.ASP    The routines for creating messages off-line.
+
+    In addition to the files provided above, the system will create the
+    following files as needed:
+
+     PCPMCI.IN      Your INBOX, this file contains retrieved messages not yet
+                    processed.
+     PCPMCI.DSK     Contains messages you have read and processed.  Be sure
+                    to purge this file occasionally to keep from getting too
+                    large.
+     PCPMCI.OUT     Contains a copy of all messages you have sent.  Be to
+                    purge it now and then.
+     PCPMCI.SND     This file contains messages you have created that have
+                    not yet been sent.
+     PCPMCI.$$*     Temporary work files.  Should be deleted by the system as
+                    you go.  Don't be afraid to delete them if they get left
+                    lying around.
+
+
+    SYSTEM VARIABLES
+
+    The system uses the following string (Sx) and numeric (Nx) variables:
+
+    String Variables
+
+     S0   Selected menu option.
+     S1   Addressee (paper message)
+     S2   Country        "
+     S3   Title/company  "
+     S4   Address line 1 ", addressee (instant message)
+     S5   Address line 2 ", subject (instant message)
+     S6   City           "
+     S7   State          "
+     S8   Zip code       "
+     S9   Subject        "
+
+    Numeric Variables
+
+     N0   Normal color attribute
+     N1   Bold color attribute
+     N2   Reverse video color attribute
+     N3   Flag, 1 = messages found on MCI
+     N4   Flag, 1 = download messages
+     N5   Flag, 1 = upload messages
+     N6   Flag, 1 = log-on only
+     N7   Reverse video bold attribute
+
+    ODDS AND ENDS
+
+    There are a couple of things to note here.  For one, the system is
+    written to access MCI Mail via Tymnet, as there is not a direct MCI node
+    here in Columbia.  However, if there is a direct MCI node in your area,
+    you can easily modify the log-on sequence in the file PCPMCI2.ASP to
+    accommodate the different log-on process.
+
+    Perhaps the trickiest maneuver being used in the system is located in
+    the file MCI.ASP.  If you look about half way down that file you'll see
+    the following command lines:
+
+     EMULATE VT102
+     TRANSMIT "ATE1^M"
+     WAITFOR "OK"
+     TRANSMIT "^[[?6h"
+     PAUSE 1
+     TRANSMIT "^[[4;21r"
+
+    The VT102 terminal has the ability to set a new scroll region, that is
+    to redefine the size and position of the terminal "window".  I use the
+    code above to reset that region so the system can have the nice looking
+    headers and footers, and the text scrolls between them.
+
+    What the code actually does is this:  first we select VT102 as the
+    terminal type, as it supports the scroll region.  Then we set the modem
+    so that it echoes commands sent to it (ATE1).  Then we send the terminal
+    control sequence to set a new origin, which is echoed back by the modem
+    then process by PROCOMM PLUS.  Then we do the same thing to set a new
+    scroll region.
+
+    This process seems to work OK on most modems, but I've found at least
+    one where it won't due to the way the modem accepts and echoes commands. 
+    If this doesn't work on your modem, as indicated by all the nice
+    formatting scrolling off the screen, you can easily re-code the thing so
+    it doesn't use the boxes when on-line.
+
+    Finally, if you look at the "Q" case in PCPMCI1.ASP, you notice that we
+    reset the emulation.  Resetting the emulation, even to the same setting,
+    resets all the scroll region stuff to normal.
+
+    Couple of other things to note.  For uploading messages, I use ASPECT
+    commands to build several temporary files, then use DOS to string them
+    together.  The resultant file, PCPMCI.SND, uses a technique called
+    blinking.  Blinking works by building a file containing both service
+    commands and the message text, which is then uploaded to MCI via an
+    ASCII upload.  This works just fine as MCI Mail supports type ahead. 
+    The display looks kinda weird, as the prompts and commands are out of
+    sync, but it seems to work just fine, at least via Tymnet.  You might
+    want to play around with the ASCII Upload pacing options (MCI.ASP) to
+    fine tune it depending upon your machine's clock speed.
+                             NECESSARY MODIFICATIONS
+
+    There are several modifications you'll need to make before attempting to
+    use the system.  
+
+    In the file MCI.ASP, change the line 
+
+     SET BAUD 1200
+
+    to match the baud rate of your modem and the access method being used.
+
+    In the file PCPMCI2.ASP, change the lines
+
+     MDIAL "xxx-xxxx"
+     TRANSMIT "USERID"
+     TRANSMIT "PASSWORD"
+
+    to contain your local access number, MCI Mail user ID and MCI Mail
+    password.
+
+    An optional modification is to change the use of PCEDIT in PCPMCI1.ASP
+    and PCPMCI4.ASP to your favorite text editor.  For example, I use KEDIT
+    there which allows me to edit much larger files, and is much more
+    powerful than PCEDIT.
+                                USING THE SYSTEM
+
+    STARTING THE SYSTEM
+
+    Now you're all set to give it a try.  You can start the system in one of
+    two ways: from the DOS command line, or from within PROCOMM PLUS.
+
+    To start it automatically when you begin PROCOMM PLUS, use the command
+    line
+
+     PCPLUS /fMCI.ASP
+
+    at the DOS prompt.  To start the system from within PROCOMM PLUS, press
+    [Alt-F5], then enter "MCI [CR]".
+
+
+    THE MAIN MENU
+
+    The system will clear the screen, spend a moment initializing, then
+    present you with a menu of options that says
+
+    +---------------------------------------------------------------------+
+    | GET   READ   CREATE   SEND   LOGON   DOS   HELP   QUIT              |
+    +---------------------------------------------------------------------+
+
+    Press [G] to call MCI Mail and retrieve your messages.  A message will
+    display at the top right of the screen if you have messages in your
+    local INBOX.
+
+    Press [R] to read messages you've retrieved and that are waiting in your
+    local INBOX.  After reading the messages you'll be prompted to PRINT
+    them, DELETE them or return to the main menu.  When you delete your local
+    INBOX, the contents are first copied to PCPMCI.DSK so you'll have an
+    archive of messages you've received.  Be sure to purge that file
+    occasionally.
+
+    Press [C] to create messages to send via MCI Mail.  The system currently
+    supports instant and paper messages.  I might add other options if I ever
+    have the occasion to need them.  You should be able to add them easily
+    using logic similar to that used for the currently support types.
+
+    Press [S] to send messages you've created.  You will be asked whether or
+    not to pick up messages while you're on-line.  Press [Y] to do so.
+
+    Press [L] to log on to MCI for an interactive session.
+
+    Press [D] to shell to DOS.  Enter "EXIT [CR]" at the DOS prompt to
+    return to PROCOMM PLUS and the system.
+
+    Press [H] to get a little help with the choices.
+
+    Press [Q] to exit the system and return to PROCOMM PLUS.  If you'd rather
+    go straight back to DOS, change the EXIT command in PCPMCI1.ASP to QUIT.
+
+
+    DEBUGGING TIPS
+
+    If you're having difficulty getting the system to work, start by going
+    into the files and commenting out the SET DISPLAY OFF commands.  That
+    will allow you to see what's going on during log on and other places
+    through the system.
+
+    Another tip is to add a SET TRACE ON command at the beginning of the
+    trouble spots, which will echo the ASPECT commands to the screen as they
+    are executed, hopefully letting you see where the trouble lies.
+    The place where I've had the most trouble is during the ASCII upload used
+    to send messages.  If you seem to be having problems there, try setting
+    the character and line pacing timing up a bit.  This is especially true
+    for fast 80286 and 80386 machines.
+
+    Well, that's about it.  Everything else should be pretty self
+    explanatory.  Please note that I make no guarantee that any of this will
+    work on your system, even though I've been using it successfully for some
+    time.  Even if it doesn't work for you, you should be able to cannibalize
+    the pieces to put together something on your own.
+
+    Good luck, and happy computing!
+

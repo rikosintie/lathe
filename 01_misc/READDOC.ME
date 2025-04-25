@@ -1,0 +1,16 @@
+                      ProComm Documentation Files
+
+
+   Beginning with version 2.4, we are providing 2 types of document files.
+   The first type, which on our board is named PRCMDOC.ARC, contains
+   formatting which will produce bold face and underlined text on almost any
+   printer.  The second type, named PRCMDOCP.ARC, contains straight ASCII
+   text with no formatting.
+
+   The formatting that we do is simple over-printing.  On a line that
+   contains boldface or underlined text, we end the line with only a CR,
+   rather than a CR/LF.  Then we simply overwrite the line with some text
+   (for boldface) or underlines to produce the desired effect.  This simple
+   method will work on almost any printer.  The formatted document, however,
+   will appear somewhat weird when viewed online due to the extra lines.
+

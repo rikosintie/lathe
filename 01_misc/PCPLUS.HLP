@@ -1,0 +1,1091 @@
+Sorry!
+
+
+
+     ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+     บ                                                                    บ
+     บ     Help is not available for the current task.  Please            บ
+     บ     consult your user's manual for information on this topic.      บ
+     บ                                                                    บ
+     ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+General Help - Terminal Mode (1 of 2)
+                             - TERMINAL MODE -
+
+You are now in Terminal Mode.  All of the PROCOMM PLUS functions are just a
+few keystrokes away.  The screen you just saw is a list of those keystrokes.
+
+                              - ONLINE HELP -
+
+Pressing [Alt-Z] will usually get you detailed help for a particular function.
+When you are not sure what to do, try pressing [Alt-Z].
+
+                              - STATUS LINE -
+
+In Terminal Mode, the 25th line of the screen is a dynamic display of current
+PROCOMM PLUS settings:
+
+                             Log File Statusฤฤฤฟ  Printer
+                    Line Settingsฤฤฤฟ          ณ  Statusฤฤฤฤฟ
+              Duplexฤฤฤฤฤฤฤฤฤฟ      ณ          ณ            ณ      Line Status
+    Emulationฤฤฤฤฤฟ          ณ      ณ          ณ            ณ           ณ
+                                                                   
+ณ MESSAGE AREA ณ VT102    ณ FDX ณ  2400 N81 ณ LOG CLOSED ณ PRINT OFF ณ OFFLINE
+
+General Help - Terminal Mode (2 of 2)
+PROCOMM PLUS emulates the following video display terminals: TTY, DEC VT52,
+DEC VT102, ANSI X3.64, IBM 3101, TeleVideo 900 series (910, 920, 925, 950,
+955), Wyse 50, Wyse 100, Heath/Zenith 19, ADDS Viewpoint 60, Lear Siegler
+ADM3/5, plus a special "3270" emulation for use with IBM mainframe protocol
+converters.  The current emulation can be changed from the Setup Facility
+(Alt-S).
+
+The emulations respond to the Ctrl-E (ENQ) enquiry character by sending
+the string stored for keyboard macro [Alt-0].  This "answerback message" is
+sent only if ENQ is set to ON in the Setup Facility ([Alt-S]).
+
+Outgoing key codes can be changed for each emulation by using the PROCOMM PLUS
+key mapping facility ([Alt-F8]).
+File Directory (1 of 1)
+The PROCOMM PLUS File Directory command lets you list the files in any
+directory or disk.
+
+At the prompt, enter any valid file specification.  You may include a drive
+and path designator, as well as the DOS wildcard characters * and ?.  If you
+press [Enter] without typing in a file specification, PROCOMM PLUS will list
+all the files in the current directory.
+
+If "MORE" appears at the bottom of the display, press any key to see
+additional files.  If it doesn't, pressing any key will return you to Terminal
+mode.
+
+For more information, see the "File Directory" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+View a File (1 of 2)
+Use the View a File feature to examine a text file without leaving PROCOMM
+PLUS.  You may use either the built in view utility or one of your own
+choosing.
+
+To use an external utility, specify the name of the program to use on the
+Files/Path Options screen of the Setup Facility.  When you press [Alt-V], you
+will be prompted for the parameters (such as the filename) to pass to the
+external program.
+
+To use the built in view utility, specify the name of the file you wish to
+read at the prompt.  Then use the following keys to move around the file:
+
+    Press ...       In order to ...
+
+    [PgDn]          To move to the next page.
+
+    [PgUp]          To move to the preceding page.
+
+    [Home]          To move to the beginning of the file.
+
+    [Esc]           To exit the view utility.
+
+View a File (2 of 2)
+For more information, see the "View a File" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Chat Mode (1 of 1)
+PROCOMM PLUS' Chat mode is particularly useful when using the CB Simulators
+on CompuServe or GEnie.  Chat mode splits the screen so that what you type
+appears on the bottom of the screen, while text received from the remote
+appears on top.
+
+Limited line editing is provided for text that you type.  Use the Backspace
+key to edit a line before it goes out.  Text is sent to the remote only after
+you press [Enter].  CTRL-Q and CTRL-S keystrokes (XON and XOFF) get sent
+immediately.
+
+Printer and disk logging will occur if they are active when Chat mode begins.
+The redisplay buffer ([Alt-F6]) is available in Chat mode, as are the keyboard
+macros [Alt-0] to [Alt-9].  Press ESC to exit Chat mode.
+
+For more information, see the "Chat Mode" section of chapter 7, "Using PROCOMM
+PLUS Commands", in the manual.
+Kermit Server Cmds (1 of 1)
+Use Kermit server commands to communicate with a remote Kermit server. For
+these commands to work properly, the remote Kermit must first be placed in
+server mode.  If the remote Kermit does not support server mode, use [PgUp]
+and [PgDn] to perform Kermit file transfers.
+
+The following Kermit server commands are supported:
+
+    Use ...         In order to ...
+
+    FINISH          To terminate the Kermit session and return you to the
+                    system level.
+
+    LOGOUT          To terminate Kermit and log you off the remote computer.
+
+    GET             To receive a file from the Kermit server.
+
+    SEND            To transfer a file to the Kermit server.
+
+For more information, see the "Kermit Server Commands" section of chapter 7,
+"Using PROCOMM PLUS Commands", in the manual.
+Translation Table (1 of 2)
+The PROCOMM PLUS translation table provides a means for you to strip or
+replace characters you receive from a remote computer.  When [Alt-W] is
+pressed, a table of pairs of ASCII values will appear.  If the translation
+table is active, PROCOMM PLUS "filters" the incoming data, replacing the
+character represented by the ASCII value in the first column in each pair with
+the character represented by the value in the second column.
+
+To translate a given character, type the ASCII value of the character you wish
+to replace and press [Enter].  Now type the ASCII value of the replacement
+character and press [Enter].  To strip a character, enter 0 as the new value.
+
+The following keys perform other translation table functions:
+
+    Press ...       In order to ...
+
+    [F1]            Save changes you have made to disk.
+
+    [F2]            Display the other half of the translation table.
+
+Translation Table (2 of 2)
+    [F3]            Activate the translation table.  If you made changes with
+                    the table turned off, be sure to save those changes before
+                    activating the table, as PROCOMM PLUS reads the PCPLUS.XLT
+                    file from the disk when this key is pressed.
+
+    [F4]            Deactivate the translation table.
+
+    [Esc]           Exit the translation table.
+
+For more information, see the "Changing the Translation Table" section of
+chapter 8, "Customizing PROCOMM PLUS", in the manual.
+Send Files (1 of 1)
+PROCOMM PLUS offers you a variety of protocols for transferring files to other
+computers.
+
+To send a file, begin the transfer procedure on the remote computer.  Now
+press [PgUp].  PROCOMM PLUS displays a list of available file transfer
+protocols.  Enter the number corresponding to the protocol you wish to use and
+press [Enter].
+
+PROCOMM PLUS now asks you to name the file you wish to send.  If you have the
+Filename Lookup option turned on, PROCOMM PLUS will search the screen for a
+valid filename and enter what it finds.  To use that filename, simply press
+[Enter].  To use another filename, or if the lookup feature is disabled,
+simply type the name of the file to transfer and press [Enter].
+
+PROCOMM PLUS will display a status screen to keep you informed of the progress
+of the transfer.
+
+For more information, see the "Send Files" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Receive Files (1 of 2)
+PROCOMM PLUS offers you a variety of protocols for transferring files to other
+computers.
+
+To receive a file, begin the transfer procedure on the remote computer.  Now
+press [PgDn].  PROCOMM PLUS displays a list of available file transfer
+protocols.  The amount of free space on the destination drive is also
+displayed.  Type the number corresponding to the protocol you wish to use and
+press [Enter].
+
+Depending upon the protocol chosen, PROCOMM PLUS may ask you for the name of
+the file you wish to receive.  If you have the Filename Lookup option turned
+on, PROCOMM PLUS will search the screen for a valid filename and enter what it
+finds.  To use that filename, simply press [Enter].  To use another filename,
+or if the lookup feature is disabled, simply type the name of the file and
+press [Enter].
+
+If prompted for the file's name, you may include a path specification.  If no
+path is included, the file will go to either the directory you have specified
+as the default path for downloaded files in the "Files/Path" section of the
+Setup Facility, or, if no such entry was made, to the current directory.
+
+Receive Files (2 of 2)
+PROCOMM PLUS will display a status screen to keep you informed of the progress
+of the transfer.
+
+For more information, see the "Receive Files" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Change Directory (1 of 1)
+PROCOMM PLUS allows you to change the current drive and directory you are
+logged to.  The current directory is shown in the top border of the window.
+To change it, type the name of the new drive and/or directory and press
+[Enter].  Press [Esc] to return to terminal mode without making any changes.
+
+For more information, see the "Change Directory" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Keyboard Macros (1 of 2)
+Keyboard macros allow you to assign character strings to the keys [Alt-0]
+through [Alt-9], which may then be used to transmit the assigned string to the
+remote.  Macro strings may be up to 50 characters long, and may contain
+imbedded control codes using the ^ translate convention described in the
+manual.  To send the string you've assigned, simply press the appropriate key
+from terminal or chat mode.
+
+After creating a group of macros be sure to save them to disk, using the [S]
+option,  or they will be discarded when you leave the current PROCOMM PLUS
+session.
+
+You may create and use any number of keyboard macro files for use with
+different systems.  By default, PROCOMM PLUS will load the file called
+PCPLUS.KEY when it is brought up.  Macro key files may also be loaded via the
+MLOAD script command.
+
+Multiple macro key files give you considerable flexibility in using different
+systems.  One thing you can do is create different .KEY files for various
+systems that you call, then load the macros via a MLOAD command in a script
+file linked to that system in the Dialing Directory.  If you use a consistent
+scheme (i.e. user ID in [Alt-1], password in [Alt-2]) you can simplify many of
+
+Keyboard Macros (2 of 2)
+your online tasks.
+
+   Press ...       In order to ...
+
+   [] or []      Select a macro to revise.
+
+   [R]             Revise the highlighted macro.
+
+   [L]             Load a new .KEY file.  To create a new file, use [C] to
+                   clear the existing macros, revise the new entries, then
+                   save the new file with the [S] command.
+
+   [S]             Save the current macro set to a disk file.
+
+   [C]             Clear the existing macro set.  This command does not
+                   erase the corresponding .KEY file.
+
+   [ESC]           Return to terminal mode.
+
+For more information, see the "Keyboard Macro" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Redisplay Buffer (1 of 2)
+Redisplay allows you to examine text that has scrolled off your screen.
+PROCOMM PLUS can redisplay the last 8,000 characters received, starting with
+the most recent screen.  With this facility you can scroll through the saved
+text a line or a page at a time, find specific text strings, and even save
+screen snapshots to disk.
+
+   Press ...       In order to ...
+
+   [PgUp] or       Scroll one screen up or down.
+   [PgDn]
+
+   [] or []      Scroll one line up or down.
+
+   [Home]          Display the first (oldest) screen.
+
+   [End]           Display the last (most recent) screen.
+
+   [F] or [/]      Find specific text in the data.  Simply type the text you
+                   want to find at the prompt.  To continue searching for
+                   the same text, press [Enter] at the search prompt.
+                   Searches are not case sensitive.
+
+Redisplay Buffer (2 of 2)
+   [W]             Write the redisplay buffer to disk.
+
+For more information, see the "Redisplay" section of chapter 7, "Using PROCOMM
+PLUS Commands", in the manual.
+Line/Port Setup (1 of 1)
+PROCOMM PLUS supports a variety of line settings.  You may select baud rate,
+parity and the number of data and stop bits, as well as 8 different serial
+ports.  The current settings are displayed at the top of this window.
+
+The most common line settings may be configured with a single key: [Alt-N] for
+no parity, 8 data and 1 stop bit, or [Alt-E] for even parity, 7 data and 1
+stop bit.  Now press 1 - 8 to select the default baud rate, and [F1] - [F8] to
+select the default COM port.
+
+If you choose COM3-COM8, be sure to specify the correct base address and IRQ
+line for the port in the "Modem Port Assignments" section of the Setup
+Facility.
+
+To create a more custom setup, select parity, data and stop bits by pressing
+the indicated key.
+
+To make the settings you specify be in effect the next time you start PROCOMM
+PLUS, press [Alt-S].
+
+For more information, see the "Changing Line and Port Settings" section of
+chapter 8, "Customizing PROCOMM PLUS", in the manual.
+Elapsed Time (1 of 1)
+PROCOMM PLUS keeps track of how long you're connected to another computer.
+The current date and time are displayed, along with the elapsed time of the
+current call or the last call made if you are not on-line.  Press "Esc" to
+return to terminal mode.
+Record Mode (1 of 1)
+PROCOMM PLUS uses Record mode to "learn" a remote computer's prompts and your
+responses-such as a log-on procedure-to create an ASPECT script file you can
+use to automate that procedure.
+
+Press [Alt-R] before beginning the task (such as dialing a system) and then
+specify a filename for the script file you want to create.  Include the .ASP
+extension before pressing [Enter].  The message "RECORDING" appears on the
+left side of the Status line to remind you that PROCOMM PLUS is recording the
+remote computer's prompts and your responses.
+
+When the procedure you wish to record is over, press [Alt-R] again.
+
+You will probably want to "fine tune" the script file using your favorite
+editor.
+
+For more information, see the "Record Mode" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Menu Line (1 of 1)
+The Menu line is an alternative interface for PROCOMM PLUS.
+
+Select a function from the Menu line by either typing the first letter of the
+command, or by highlighting the command (using the [-] and [-] keys) and
+pressing [Enter].
+
+The "hot key" used to activate the menu line may be changed in the "General
+Options" section of the Setup Facility.
+
+For more information, see the "Using the Menu Line" section of chapter 1,
+"Getting Started", in the manual.
+Script File Selection (1 of 1)
+To execute an ASPECT script file, type the name of the script file (without
+the .ASP extension) and press [Enter].  If you are unsure of the name,
+pressing [Enter] by itself will open a window displaying the .ASP files in the
+current directory.  If no .ASP files exist in the current directory, PROCOMM
+PLUS will display files in the directory pointed to by the PCPLUS environment
+variable.
+
+To select a file from the window, use the up and down arrow keys to position
+the highlight on the desired file and press [Enter].  Use [PgUp] and [PgDn] to
+page through the display.
+
+The name of the script file appears at the left of the Status line while it is
+being executed.
+
+To cancel execution of a script file, press [Esc], and answer 'Y' to the
+prompt.
+
+For more information, see the "Script Files" section of chapter 7, "Using
+PROCOMM PLUS Commands", in the manual.
+Host Mode (1 of 3)
+Host mode provides a convenient method of allowing other computers to connect
+with yours to transfer files, send messages via electronic mail, converse
+on-line, and even execute DOS commands.
+
+With the following exceptions, Host mode treats all local keystrokes as if
+they were sent by the remote user.
+
+    Press ...       In order to ...
+
+    [Esc]           Return to terminal mode (or script execution depending on
+                    how Host mode was started).
+
+    [F1]            Chat with user.  The remote user is told that the system
+                    operator is on-line and the local console is placed into
+                    chat mode.  (Unavailable when nobody is connected).
+
+    [Ctrl-X]        Terminate current user and prepare for next user.
+
+    [F2]            Perform a local logon.  This key is available only while
+                    Host mode is waiting for a modem connection (the message
+                    "Waiting..." appears on the status line).  This feature is
+
+Host Mode (2 of 3)
+                    useful for checking the "look and feel" of your system and
+                    for performing Host functions without a connection.
+
+Several host mode operating characteristics are defined in the "Host Mode
+Options" section of the Setup Facility (help with Host mode options is
+available from within that section of the Setup Facility).  Before running
+Host mode, confirm the Host mode options setup as well as these settings:
+
+Current             All files in this directory will be available for
+directory           downloading if you have not specified a download
+                    directory in Host Options Setup.
+
+Line/port setup     The baud rate should be set to the highest speed supported
+                    by your modem, unless you have 'Connection type' set to
+                    direct.  Also, both computers should be using the same
+                    line settings.
+
+Modem setup         Your modem should respond correctly to both the
+                    auto-answer function as well as the hangup function.
+                    Additionally, if you have Host mode auto baud detect on,
+                    your modem must return the connect strings specified in
+
+Host Mode (3 of 3)
+                    the "Modem Result Messages" setup.
+
+When a remote user connects and tries to access your system, there are three
+actions Host mode may take depending on the user's name, whether or not the
+user is found in PCPLUS.USR, and your 'System type' definition.
+
+Deny access         This occurs if a new user tries to access a closed system
+                    or if a defined user is unable to enter the correct
+                    password after three tries.
+
+Allow normal        This occurs when a defined user logs on with a '0'
+access              privilege or when a new user logs on to an open system.
+
+Allow full          This occurs only when a defined user logs on with a
+access              privilege that has been set to '1'.
+
+Once a remote user has been validated, the file PCPLUS.NWS is displayed (if it
+exists) and the main menu is presented.
+
+For more information, see chapter 9, "Using Host Mode", in the manual.
+Key Mapping (1 of 2)
+PROCOMM PLUS lets you remap (redefine) any of 79 keys for each of its
+supported terminal emulations.  Remapping a key changes the codes sent by that
+key when it is pressed.
+
+Press [Space], [PgUp] or [PgDn] to select the emulation you wish to modify.
+To change a key definition, press the key you wish to change, then enter the
+new code and press [Enter].
+
+To exit the keyboard mapping screen, press [ESC].  If you wish to keep the
+changes you have made press "Y", otherwise press "N" to abandon the changes.
+
+[Num Lock] must be active to get keypad 0 through keypad 9 and keypad period.
+Use notation like that shown below to include control characters in a key's
+definition. To enter a Ctrl-^ hold [Ctrl] and press [^].  You will see ฏ^^ฎ on
+the screen.  To enter the delete character (ASCII 127), hold [Ctrl] and press
+the Backspace key.  You will see ฏDELฎ on the screen.
+
+Key Mapping (2 of 2)
+Below are some common control characters used by the emulations:
+
+                     ^[ .............. Escape
+                     ^H .............. Back Space
+                     ^I .............. Tab
+                     ^J .............. Line Feed
+                     ^M .............. Carriage Return
+
+For more information, see the "Changing the Keyboard Mapping" section of
+chapter 8, "Customizing PROCOMM PLUS", in the manual.
+Dialing Directory (1 of 5)
+The PROCOMM PLUS Dialing Directory automates most of your dialing tasks.  Each
+directory holds information for 200 of your most often-called systems, and you
+may have as many directories as will fit on your disk.  The information stored
+for each entry includes the name and phone number, the communications
+parameters, the default terminal emulation and file transfer protocol, plus
+some historical data.  You can also link ASPECT files to Dialing Directory
+entries to provide custom setup configurations or to perform logon sequences
+automatically.
+
+The current active COM port, line settings and duplex mode are displayed at
+the bottom of the screen, along with a display of active dialing codes.
+
+To move through a directory's entries, use the following keys.
+
+   Press ...       In order to ...
+
+   [] or []      Highlight the previous or next entry.
+
+   [PgUp] or       Display the previous or next page of entries.
+   [PgDn]
+
+Dialing Directory (2 of 5)
+   [Home]          Display the first page of the directory.
+
+   [End]           Display the last page of the directory.
+
+   [F] or [/]      Find an entry or number.  Simply enter the search text at
+                   the prompt and press [Enter].  Searches are not case
+                   sensitive, and you may search on any part of the entry's
+                   name or number.
+
+   [A]             Find the same text again.
+
+   [G]             Go to a specific entry.  Enter the entry number at the
+                   prompt and press [Enter].
+
+
+You can dial entries in your Dialing Directory in several ways.
+
+To dial a single system, highlight the system's entry using [] and [] and
+press [Enter].
+
+Dialing Directory (3 of 5)
+To dial a number not in your Dialing Directory press [M], enter the number and
+press [Enter].
+
+To dial a series of numbers in a "circular list" use [] and [] to highlight
+an entry to be dialed then press [Space] to "mark" it.  The entry will be
+marked by a  at the left.  You may mark up to 15 entries.  To dial the marked
+entries, press [Enter].
+
+You may also dial one or more numbers with or without dialing codes by using
+the [D] command.  Press [D] and at the prompt enter one or more entry numbers
+separated by spaces.  You may include dialing codes with each entry specified.
+
+Other commands are available in the Dialing Directory as well.
+
+   Press ...       In order to ...
+
+   [R]             Revise the highlighted entry.  More help is available on
+                   revising by pressing [Alt-Z] after selecting the [R]
+                   command.
+
+Dialing Directory (4 of 5)
+   [E]             Erase one or more entries.  To erase a single entry,
+                   highlight the entry using [] and [] and press [E].  To
+                   erase multiple entries, marked the entries as described
+                   above and press [E].  Any number of entries may be erased
+                   at one time.
+
+   [L]             Print the current Dialing Directory to your printer or a
+                   disk file.
+
+   [P]             Examine or revise dialing codes.  More help is available
+                   on dialing codes by pressing [Alt-Z] after selecting the
+                   [P] command.
+
+   [X]             Load a different Dialing Directory.  If the directory
+                   specified does not exist, a new one will be created.  You
+                   can have as many directories as will fit on your disk.
+
+   [T]             Toggle the directory display.  By pressing [T] you can
+                   change the information displayed for each entry.
+
+Dialing Directory (5 of 5)
+   [C]             Turn off marks on all the marked entries.
+
+For more information, see chapter 7, "Using the Dialing Directory", in the
+manual.
+Dialing Codes (1 of 2)
+PROCOMM PLUS lets you specify up to 10 dialing codes.  Each dialing code
+represents a series of characters to be dialed along with a telephone number
+when the code is encountered.  Dialing codes are used to provide access to
+alternate long-distance carriers, to dial through an office PBX or switchboard
+equipment, or for other situations when your dialing command must contain
+characters other than just the number.
+
+You can use dialing codes by including one or more before, within, or after
+the telephone number in a Dialing Directory entry, or by typing one or more
+codes before or after the entry number when you dial a computer by typing the
+entry number (the [D] command from the Dialing Directory menu).
+
+This menu allows you to revise or erase dialing codes.
+
+   Press ...       In order to ...
+
+   [] or []      Highlight the dialing code to be revised to erased.
+
+   [R]             Revise the highlighted dialing code.
+
+Dialing Codes (2 of 2)
+   [E]             Erase the highlighted dialing code.
+
+For more information, see the "Adding or Changing a Dialing Code" section of
+chapter 6, "Using the Dialing Directory", in the manual.
+Revising an Entry (1 of 2)
+Each entry in a Dialing Directory consists of the following information:  the
+name of the system, its telephone number, the baud rate and line settings, the
+duplex mode, an optional script file to execute, the default protocol and
+terminal emulation for that entry plus some historical information.  Use this
+screen to add or alter Dialing Directory entries.
+
+When editing the name, number and script file fields you may use the following
+keys:
+
+   Press ...       In order to ...
+
+   [-] or [-]    Move the cursor to the right or left.
+
+   [Home]          Move the cursor to the beginning.
+
+   [End]           Move the cursor to the end.
+
+   [Ins]           Switch between Insert and Overtype mode.
+
+   [Del]           Delete the character at the cursor.
+
+Revising an Entry (2 of 2)
+   [Backspace]     Delete the character to the left of the cursor.
+
+   [Tab]           Delete all characters.
+
+   [Ctrl-End]      Delete all characters from the cursor to the end.
+
+When editing the other fields, use [] and [] to highlight the value you wish
+to use, and then press [Enter].  If you wish to leave a field unchanged, press
+[Enter].
+
+After editing all the fields you will be asked whether you want to CLEAR THE
+LAST DATE AND TOTAL.  PROCOMM PLUS keeps track of the last date you connected
+to each system, and the total number of times you've connected to each system.
+Press [Y] to clear that data, N to keep it.  PROCOMM PLUS will then ask
+whether you want to ACCEPT THIS ENTRY.  Enter [N] to make more revisions, or
+[Y] to put the entry into the Dialing Directory.  If you accepted the entry
+PROCOMM PLUS will ask whether to SAVE ENTRY TO DISK.  Press [Y] to make the
+entry permanent, or [N] to keep the entry for the current session only.
+Setup Facility (1 of 3)
+The Setup Facility lists nine sets of specifications that you may customize to
+fit your particular needs and desires. When you select a set, PROCOMM PLUS
+displays a specifications screen that shows what's currently in effect.
+
+To select the set of specifications you want to see:
+
+    - Press the letter key corresponding to the first letter in the set of
+    specifications.
+OR
+    - Use the [] and [] keys to highlight it, then press [Enter].
+
+You can change a specification in one of four ways, depending on the
+particular specification:
+
+    - By selecting from one of several choices (such as ON and OFF).
+
+    - By typing a word or phrase (such as a message).
+
+    - By typing a number (such as the length of a time interval).
+
+    - By selecting from one of several colors (for windows).
+
+Setup Facility (2 of 3)
+To change a multiple-choice specification:  When the cursor is in the
+specification you want to change, press [Space] to display another option,
+then press [Enter] to use the displayed option, or press [Esc] to cancel the
+change.
+
+To change a word or phrase in a specification:  When the cursor is in the
+specification you want to change, you can use these keys to change it:
+
+   Press ...       In order to ...
+
+   [-] or [-]    Move the cursor to the right or left.
+
+   [Home]          Move the cursor to the beginning.
+
+   [End]           Move the cursor to the end.
+
+   [Ins]           Switch between Insert and Overtype mode.
+
+   [Del]           Delete the character at the cursor.
+
+   [Backspace]     Delete the character to the left of the cursor.
+
+Setup Facility (3 of 3)
+   [Tab]           Delete all characters.
+
+   [Ctrl-End]      Delete all characters from the cursor to the end.
+
+To change a number or character specification:  When the cursor is in the
+specification you want to change, type the number or character.  If the number
+is some time interval, PROCOMM PLUS indicates whether the units are seconds or
+milliseconds.  Press [Enter] to use the new specification, or press [Esc] to
+cancel the change.
+
+To change a color specification:  Press [-] to select whether you want to
+specify the color of the window's background, its foreground (the text in the
+window), or what's highlighted in the window.  Press [Space] to select a
+different color.
+
+If you want your changes to be in effect the next time you use PROCOMM PLUS,
+you must save the changes before exiting.  If you exit without saving your
+changes, they will be in effect only until you exit PROCOMM PLUS.
+
+For more information, see chapter 8, "Customizing PROCOMM PLUS", in the
+manual.
+Modem General Options (1 of 2)
+Initialization      Specifies a series of commands that PROCOMM PLUS sends to
+command             the modem every time you start PROCOMM PLUS or exit Host
+                    mode.
+
+Dialing command     Specifies the command that tells your modem to dial.
+
+Dialing command     Specifies the character that tells your modem to begin
+suffix              executing a dialing command.
+
+Hangup command      Specifies the command that tells the modem to hang up the
+                    line (disconnect).
+
+Auto answer         Specifies the command that tells the modem to answer all
+command             calls automatically.  The command you specify here is what
+                    PROCOMM PLUS sends to your modem when you press [Alt-Y] or
+                    when you start Host mode.
+
+Wait for            Specifies how long PROCOMM PLUS will wait for a connection
+connection          after dialing.  You can override this specification when
+                    you're dialing.
+
+Modem General Options (2 of 2)
+Pause between       Specifies how long PROCOMM PLUS will pause before dialing
+calls               another number after no connection is made in dialing the
+                    preceding number.
+
+Auto baud           Specifies whether PROCOMM PLUS will automatically change
+detect              its baud rate when a connection is made at a different
+                    baud rate.
+
+Drop DTR to         Specifies whether you want PROCOMM PLUS to hangup by
+hangup              dropping the DTR line.
+
+Send init if        Determines whether or not the modem initialization command
+CD high             will be sent if CD is high on program startup.
+
+For more information, see the "Modem Result Messages" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Modem Result Messages (1 of 2)
+When you attempt to make a connection with another computer, your modem
+indicates the result by sending a result message (also called a status message
+or a status code) to your computer. This message appears on your display; in
+addition, PROCOMM PLUS uses it to decide whether to maintain the connection or
+to hang up dial again.
+
+To ensure that PROCOMM PLUS recognizes the messages sent by your modem, you
+need to tell PROCOMM PLUS what those messages are. By changing the messages in
+the MODEM RESULT MESSAGES specifications screen, you can change the messages
+PROCOMM PLUS will recognize. Check your modem's manual to find out what
+messages it sends.
+
+300 to 19,200       Specifies the message your modem sends if a connection is
+baud connect        made at the indicated baud rate.
+message
+                    Note: The default message for 300 baud is followed by the
+                    ^M control code, which represents a carriage-return.  The
+                    ^M at the end of the message enables PROCOMM PLUS to
+                    distinguish the default connect message for 300 baud from
+                    the default connect messages for other baud rates, all of
+                    which include the 300-baud connect message within them.
+
+Modem Result Messages (2 of 2)
+No connect          Specifies the messages your modem sends if a connection is
+message 1 to 4      not made.
+
+For more information, see the "Modem Result Messages" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Modem Port Assignments (1 of 2)
+PROCOMM PLUS is capable of working with any of eight COM ports, COM1 through
+COM8. On this screen you can specify the base address and the interrupt line
+for each COM port.
+
+You normally need not be concerned with these specifications unless you are
+installing a COM port from COM3 through COM8. If you are installing one of
+these COM ports, see the documentation accompanying the hardware you're
+installing to find out how to set the base address and IRQ line for that port
+on the hardware.
+
+When you select a COM port to change, PROCOMM PLUS puts the cursor in the base
+address. After you press [Enter] , it moves the cursor to the IRQ line for
+that port.
+
+The default values for COM1 and COM2 are standard.  PROCOMM PLUS' defaults
+for COM3 and COM4 (3E8/IRQ4,2E8/IRQ3) are somewhat standard, but depending
+upon the hardware may be reversed as COM3=2E8/IRQ3 and COM4=3E8/IRQ4.
+
+Modem Port Assignments (2 of 2)
+
+Default values for PS/2 machines are
+
+         COM1  3F8   IRQ4           COM5  4220  IRQ3
+         COM2  2F8   IRQ3           COM6  4228  IRQ3
+         COM3  3220  IRQ3           COM7  5220  IRQ3
+         COM4  3228  IRQ3           COM8  5228  IRQ3
+
+For more information, see the "Modem Port Assignments" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Terminal Options (1 of 2)
+Terminal            Specifies the terminal PROCOMM PLUS will emulate when
+emulation           connected to another computer.  See appendix F, Terminal
+                    Emulation, for the codes transmitted under each terminal
+                    emulation.
+
+Duplex              Specifies the Duplex mode that will be in effect when you
+                    start PROCOMM PLUS.
+
+Software flow       Specifies whether PROCOMM PLUS is to use software flow
+control             control (XON/XOFF).
+
+Hardware flow       Specifies whether PROCOMM PLUS will use hardware flow
+control             control (RTS/CTS).  This setting is sometimes useful if
+                    you're using a high-speed modem.
+
+Line wrap           Determines whether PROCOMM PLUS will wrap to the next line
+                    when it receives a line greater than 80 characters in
+                    length.
+
+Screen scroll       Controls if PROCOMM PLUS will scroll the screen up one
+                    line when a [CR] is received and the screen is full.
+
+Terminal Options (2 of 2)
+CR translation      Specifies whether or not PROCOMM PLUS will add a line-feed
+                    to each carriage-return received from the remote computer.
+
+BS translation      When set to DESTRUCTIVE, receiving a Backspace character
+                    moves the cursor to the left and deletes the character
+                    there.  When set to NON-DESTRUCTIVE, the cursor moves to
+                    the left but does not delete the character there.
+
+Break length        Specifies the length of a break (time delay) sent by
+                    PROCOMM PLUS when you press [Alt-B].
+
+Enquiry (ENQ)       Specifies how PROCOMM PLUS will respond if the other
+                    computer sends an ENQ control character (Ctrl-E).  When
+                    set OFF, PROCOMM PLUS ignores the ENQ.  When set ON, it
+                    will respond by sending character string assigned to the
+                    Alt-0 keyboard macro.  When set to CIS B, PROCOMM PLUS
+                    will begin a COMPUSERVE B file transfer.
+
+For more information, see the "Terminal Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Kermit Options (1 of 1)
+Kermit is typically used for file transfers with a mainframe computer system.
+To determine the specifications to use in this set-up screen, consult the
+system administrator for the system to which you will be connecting.
+
+To change any of the specifications, press the letter key next to it, then
+change it as directed at the bottom of the screen.
+General Options (1 of 3)
+Exploding           Specifies if PROCOMM PLUS opens windows by exploding them
+windows             from the center outward.
+
+Sound effects       Specifies whether PROCOMM PLUS will generate sounds when
+                    it opens or closes windows.
+
+Alarm sound         Specifies whether or not PROCOMM PLUS will use your
+                    computer's speaker to signal the end of file transfers,
+                    connects during redials, and other events.
+
+Alarm time          Specifies how long PROCOMM PLUS will sound the alarm.
+
+Translate table     Specifies whether or not PROCOMM PLUS uses the translation
+                    table to translate (or strip) characters being received
+                    from the other computer.
+
+Pause character     Specifies the character to be translated as a half second
+                    pause in outgoing strings.
+
+Transmit pacing     Specifies the delay between sending each character in a
+                    string (commands sent to the modem, macros, and terminal
+
+General Options (2 of 3)
+                    control sequences such as function keys and cursor
+                    control).
+
+Call logging        Specifies whether PROCOMM PLUS will keep a log of all
+                    completed calls.
+
+Filename lookup     Specifies whether PROCOMM PLUS will look for a filename on
+                    the screen when you press [PgDn] or [PgUp] to begin a file
+                    transfer.
+
+Menu line           Specifies whether the Menu line is active.
+
+Menu line key       Specifies the key that will activate the Menu line.
+
+Snow removal        Specifies whether PROCOMM PLUS will attempt to eliminate
+                    snow on the screen.
+
+Remote commands     Determines whether PROCOMM PLUS will accept and execute
+                    script commands sent by the remote system while emulating
+                    certain terminals.
+
+General Options (3 of 3)
+KB speedup          Specifies whether to attempt enhanced keyboard speedup.
+
+ANSI compatibility  Determines the behavior of screen clearing and line
+                    editing within PROCOMM PLUS' ANSI terminal emulation.
+                    (Emulates DOS 2.x or 3.x ANSI.SYS device driver.)
+
+For more information, see the "General Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Host Mode Options (1 of 1)
+Welcome message     Specifies the message that PROCOMM PLUS sends to the other
+                    computer when it connects to your computer with PROCOMM
+                    PLUS in Host mode.
+
+System type         Specifies whether new users can access your system.  When
+                    set to OPEN, PROCOMM PLUS allows new users to access your
+                    system.
+
+Auto baud           Specifies whether PROCOMM PLUS will automatically change
+detect              its baud rate to match the rate that the modems connected
+                    at.
+
+Connection type     Specifies whether the remote system is connected to your
+                    system by a modem or by a direct connection.
+
+Upload directory    Where files uploaded to host mode will go.
+
+Download directory  Directory available to normal users.
+
+For more information, see the "Host Mode Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+ASCII Transfer Options (1 of 2)
+These specifications control how data is transmitted or received if you're
+using the ASCII file-transfer protocol.
+
+Echo locally        Specifies whether PROCOMM PLUS will display on your screen
+                    data that's being sent to the other computer.
+
+Expand blank        Specifies whether PROCOMM PLUS will replace blank lines
+lines               with line containing a space.
+
+Expand tabs         Specifies whether PROCOMM PLUS will replace tab characters
+                    with eight spaces in files being uploaded.
+
+Character           Specifies the delay between sending each character to the
+pacing              other computer.
+
+Line pacing         Specifies the delay between sending each line of data  to
+                    the other computer.
+
+Pace character      If you specify a pace character, PROCOMM PLUS waits to
+                    receive that character from the remote computer before
+
+ASCII Transfer Options (2 of 2)
+                    sending the next line. You specify a pace character using
+                    its ASCII (numeric) value.
+
+CR translation      Specifies how PROCOMM PLUS will perform will process
+(upload)            carriage-return characters in files you send to the remote
+                    computer.
+
+LF translation      Specifies how PROCOMM PLUS will process line-feed
+(upload)            characters in files you send to the remote computer.
+
+CR translation      Specifies how PROCOMM PLUS will process carriage-return
+(download)          characters in files you receive from the remote computer.
+
+LF translation      Specifies how PROCOMM PLUS will process line-feed
+(download)          characters in files you receive from the remote computer.
+
+Strip 8th bit       Determines if PROCOMM PLUS will strip the high order bit
+                    during ASCII file transfers.
+
+For more information, see the "ASCII Transfer Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+File/Path Options (1 of 2)
+Default             Specifies the filename PROCOMM PLUS will use for logging
+filename for        when you press [Alt-F1]. The filename you specify here
+log files           will be the one PROCOMM PLUS will use unless, when you
+                    select that command, you enter a different filename before
+                    pressing [Enter].
+
+Default             Specifies the filename PROCOMM PLUS will use for saving
+filename for        the contents of the screen when you press [Alt-G].
+screen snapshot
+files
+
+Default path        Specifies the path (the disk drive and/or directory) that
+for downloaded      PROCOMM PLUS will use for saving files you receive from a
+files               remote computer.
+
+Program name        Specifies the command that starts the editor or word
+for editor hot      processor you want PROCOMM PLUS to access when you press
+key                 [Alt-A].
+
+File/Path Options (2 of 2)
+Program name        Specifies the command that starts the view utility you
+for view            want PROCOMM PLUS to access when you press [Alt-V].  If
+utility hot key     you don't specify a view utility here, PROCOMM PLUS uses
+                    its own built-in view utility.
+
+Program name        Specifies the command that starts the program you want to
+for user hot        be able to run by pressing [Alt-J].
+key 1
+
+Program name        Specifies the command that starts the program you want to
+for user hot        be able to run by pressing [Alt-U].
+key 2
+
+For more information, see the "File/Path Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Color Options (1 of 1)
+Press any key (except [Esc]) to remove the instructions from the color options
+screen.  Press  to select the window whose colors you want to specify.  Press
+- to select whether you want to specify the color of the window's background,
+its foreground (the text in the window), or text that's highlighted in the
+window.
+
+Press [Space] to select a different color.  The new colors are displayed in
+the box to the right.  Note that reverse video is displayed in the box but is
+not selectable; it is created by reversing the background and foreground.
+Reverse video not used in most areas.
+
+When you're done, press [Esc].  If you want to change the colors of all
+windows to black and white, start PROCOMM PLUS using the /b switch.  Be sure
+to save your changes so that the windows will be displayed in black and white
+for all future PROCOMM PLUS sessions.
+
+For more information, see the "Color Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+Protocol Options (1 of 1)
+External            Specifies the program you want to use for transferring
+protocol            files when you select one of the external protocols
+filenames           (numbers 14, 15 and 16) for uploading or downloading.
+
+The program names you specify here for external protocols will appear in the
+list of protocols that's displayed when you press [PgDn] or [PgUp] to receive
+or send a file. You can then enter any parameters the program may require
+(such as the name of the file to be transferred, the baud rate, or the COM
+port to be used).
+
+XMODEM type         Specifies whether to use NORMAL or RELAXED timing for file
+                    transfers using the XMODEM protocol.
+
+Aborted             Specifies what happens to files being downloaded if the
+downloads           file transfer is aborted.
+
+For more information, see the "Protocol Options" section of chapter 8,
+"Customizing PROCOMM PLUS", in the manual.
+PCEDIT Help (1 of 2)
+PCEDIT is a simple ASCII text editor.  It handles lines up to 80 characters
+long with a maximum of 500 lines per file.  The following is a list of keys
+to press for available functions:
+
+                     Ins: Switch between INSERT and OVERTYPE mode.
+                     Del: DELETE CHARACTER at cursor.
+               Backspace: DELETE CHARACTER at left of cursor.
+             F1 or Alt-I: INSERT LINE at cursor.
+             F2 or Alt-D: DELETE LINE at cursor.
+                Ctrl-End: ERASE from cursor to end of line.
+             F6 or Alt-S: SEARCH for a character string.
+                    Home: Go to FIRST CHARACTER in the line.
+                     End: Go to LAST CHARACTER in the line.
+  Ctrl-Home or Ctrl-PgUp: Go to TOP OF FILE.
+               Ctrl-PgDn: Go to END OF FILE.
+                    PgUp: UP one screen.
+                    PgDn: DOWN one screen.
+                   Alt-B: MARK BLOCK for COPY, MOVE or DELETE.
+                      F3: SAVE - Save file, return to editing.
+                      F4: FILE - Save file, exit to DOS.
+             Alt-X or F5: QUIT - Exit (with option to not save changes).
+
+PCEDIT Help (2 of 2)
+PCEDIT has several built in macros for use with the ASPECT script language.
+Press one of the keys below to automatically insert the indicated macro at
+the cursor position.
+
+
+                 KEY    MACRO              KEY      MACRO
+                 ฤฤฤฤฤฤ ฤฤฤฤฤ              ฤฤฤฤฤฤฤฤ ฤฤฤฤฤ
+                 Alt-A: ASSIGN              Alt-F1: IF
+                 Alt-C: CLEAR               Alt-F2: ELSE
+                 Alt-F: FATSAY              Alt-F3: ENDIF
+                 Alt-G: GET                 Alt-F5: SWITCH
+                 Alt-H: HANGUP              Alt-F6: CASE
+                 Alt-L: LOCATE              Alt-F7: ENDCASE
+                 Alt-M: MESSAGE             Alt-F8: ENDSWITCH
+                 Alt-P: PAUSE               Alt-F9: ATSAY
+                 Alt-R: RGET               Alt-F10: ATGET
+                 Alt-T: TRANSMIT
+                 Alt-W: WAITFOR
+Terminal Color Options (1 of 1)
+Use this screen to set the default terminal mode colors for PROCOMM PLUS.
+Five terminal attributes are supported: normal, bold, low, reverse and
+underline.  The five attributes are provided in order to support the differing
+display characteristics of the numerous terminals that PROCOMM PLUS emulates.
+For example, the low attribute is used for half intensity as well as write
+protected fields in TeleVideo and Wyse emulations.  Note that not all
+attributes are available with each emulation.
+
+To change an attribute, press the key corresponding to that attribute.  Then
+enter the number of the color you wish to use.  The available colors and their
+numbers are displayed on the lower half of the screen to aid you in your
+selection.
+
+Under some conditions, the selected terminal colors may be changed under
+control of the remote system.  Many BBS systems use ANSI codes to produce
+colorful graphic displays, but those codes can also reset your terminal
+colors.  Your selected colors will be restored when the terminal type is
+reset, or when you exit and return to PROCOMM PLUS.
+END OF HELP
+

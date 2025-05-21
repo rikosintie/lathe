@@ -1,0 +1,2781 @@
+{
+  "C:/Users/Administrator/AppData/Local/Autodesk/Autodesk Fusion 360/CAM/cache/posts/brother multi-tasking.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "_cacheFilePath": "C:\\Users\\Administrator\\AppData\\Local\\Autodesk\\Autodesk Fusion 360\\CAM\\cache\\posts\\brother multi-tasking.cps",
+      "_fileUrl": "https://cam.autodesk.com/posts/download.php?nostats&name=brother%20multi-tasking",
+      "allowHelicalMoves": true,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "capabilities": "MILLING TURNING MACHINE_SIMULATION",
+      "certificationLevel": 2,
+      "changes": true,
+      "datetime": "2025-04-17 13:58:42",
+      "default_in": {
+        "highFeedrate": 200,
+        "unit": 0
+      },
+      "default_mm": {
+        "highFeedrate": 5000,
+        "unit": 1
+      },
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "Brother Speedio M Series",
+      "extension": "NC",
+      "filename": "",
+      "forkid": "{665F2538-1853-4747-ABC5-8ACA1027A805}",
+      "guide": "guides/Brother_Multi_Tasking_Post_Guide.pdf",
+      "hashlog": {
+        "44118": "4cb1a895735b0904eaf80848a63e67c221981ab979995c8f9bac83936ff8696d",
+        "44130": "93427e34330f29f4c7db7a772e302faac510e423f7d663fc37b0246916d1fdfe",
+        "44131": "3cbfd7a28021971074de87ed0bd9507e37d9e84c1c9677055c7a4943cfe71450",
+        "44135": "b710ef04f4f07fe801bbd0d1b9b6e8b11b2bd55b27a74b5daea01a73a4ade5a9",
+        "44136": "b8c59353a54a8375772193bd653680d4ea26f9e2b6471208103e1c34ec782e5d",
+        "44139": "ba18a16b5531594e12c758349410db3b970115cf8017dd8d2dba410214bb07de",
+        "44143": "41ba7c8bfca53372d535e628ecd9cf44f33530aa02f7b1c6a06f9159a6336019",
+        "44145": "45d866983626f3a1ed7bc0a571617af6b2cd9a28f31642458f6afc093327a41d",
+        "44155": "15ab682949fae2c547c714c55be3ad7628fee5e4cc0246e24df5d9a5daf081d0",
+        "44159": "5824ea1132ad162e54dc03c890245175d770eda6b76335fcd3fd8546aaa784df",
+        "44161": "52457e507f3c2a2f84ef4207322921755ce0431424b8d0ecd5b91d3d428d8b8c",
+        "44166": "322db8bb3c47fbb23304aa7b133124d243cd23844e849cb8f3d5e8e666a3e88b",
+        "44168": "013628980f79270cad9d26d1c73f26378e3a0335e89f3b96de0947b7484a66c3",
+        "44174": "9f016679b4cc29e7c196edfac1da9f649db3e68c2b5f7295361c71b31984db57"
+      },
+      "hidden": false,
+      "highFeedMapping": 0,
+      "highFeedrate": 200,
+      "iso": true,
+      "keywords": "",
+      "longDescription": "Generic multi tasking post for Brother Speedio M Series (M140, M200 and M300).\u000d\u000aUse Turret 0/1 for +X axis turning.\u000d\u000aTurret 202 for +Y axis turning.\u000d\u000aTurret 203 for -X axis turning.\u000d\u000aTurret 204 for -Y axis turning.\u000d\u000aand Turret 205 for A90 +Y axis turning.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45917,
+      "package": false,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": false,
+      "properties": {
+        "doubleTapWithdrawSpeed": {
+          "description": "If enabled, an L value containing double the spindle speed (up to 6000) will be output in the G77 tapping cycle.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Double the tap withdraw speed",
+          "type": "boolean",
+          "value": false
+        },
+        "maximumTurningSpeed": {
+          "description": "The maximum turning speed for the C-axis.",
+          "group": "preferences",
+          "scope": "machine",
+          "title": "Maximum turning speed",
+          "type": "integer",
+          "value": 2000
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "preloadTool": {
+          "description": "Preloads the next tool at a tool change (if any).",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Preload tool",
+          "type": "boolean",
+          "value": false
+        },
+        "probingType": {
+          "description": "Specified what probing cycles are used on the machine.",
+          "group": "probing",
+          "scope": "post",
+          "title": "Probing type",
+          "type": "enum",
+          "value": "Renishaw",
+          "values": [
+            {
+              "id": "Renishaw",
+              "title": "Renishaw"
+            },
+            {
+              "id": "Blum",
+              "title": "Blum"
+            }
+          ]
+        },
+        "safePositionMethod": {
+          "description": "Select your desired retract option. 'Clearance Height' retracts to the operation clearance height.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe Retracts",
+          "type": "enum",
+          "value": "G53",
+          "values": [
+            {
+              "id": "G53",
+              "title": "G53"
+            },
+            {
+              "id": "clearanceHeight",
+              "title": "Clearance Height"
+            }
+          ]
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 5
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "'Yes' outputs sequence numbers on each block, 'Only on tool change' outputs sequence numbers on tool change blocks only, and 'No' disables the output of sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "enum",
+          "value": "toolChange",
+          "values": [
+            {
+              "id": "true",
+              "title": "Yes"
+            },
+            {
+              "id": "false",
+              "title": "No"
+            },
+            {
+              "id": "toolChange",
+              "title": "Only on tool change"
+            }
+          ]
+        },
+        "singleResultsFile": {
+          "description": "Set to false if you want to store the measurement results for each probe / inspection toolpath in a separate file",
+          "group": "probing",
+          "scope": "post",
+          "title": "Create single results file",
+          "type": "boolean",
+          "value": true
+        },
+        "smoothingMode": {
+          "description": "Select the high accuracy mode supported by the control.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "High accuracy mode",
+          "type": "enum",
+          "value": "A",
+          "values": [
+            {
+              "id": "A",
+              "title": "A"
+            },
+            {
+              "id": "B",
+              "title": "B"
+            },
+            {
+              "id": "M298",
+              "title": "M298"
+            }
+          ]
+        },
+        "useParametricFeed": {
+          "description": "Specifies that the feedrates should be output using parameters.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "usePitchForTapping": {
+          "description": "Enables the use of pitch and threads per inch instead of feed for tapping cycles. Using G77/78 instead of G84/74.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use Pitch/TPI for tapping",
+          "type": "boolean",
+          "value": true
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "useSimpleThread": {
+          "description": "Enable to output G392 simple threading cycle, disable to output G376 standard threading cycle.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use simple threading cycle",
+          "type": "boolean",
+          "value": true
+        },
+        "useSmoothing": {
+          "description": "Select the high accuracy level to use for machining.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "High accuracy level",
+          "type": "enum",
+          "value": "-1",
+          "values": [
+            {
+              "id": "-1",
+              "title": "Off"
+            },
+            {
+              "id": "9999",
+              "title": "Automatic"
+            },
+            {
+              "id": "0",
+              "title": "Standard"
+            },
+            {
+              "id": "1",
+              "title": "Roughing"
+            },
+            {
+              "id": "2",
+              "title": "Medium rough"
+            },
+            {
+              "id": "3",
+              "title": "Medium rough high"
+            },
+            {
+              "id": "4",
+              "title": "Finishing"
+            },
+            {
+              "id": "5",
+              "title": "Finishing high"
+            }
+          ]
+        },
+        "useTiltedWorkplane": {
+          "description": "Enable to use G68.2 for 3+2 operations.",
+          "group": "multiAxis",
+          "scope": "machine",
+          "title": "Use G68.2",
+          "type": "boolean",
+          "value": true
+        },
+        "washdownCoolant": {
+          "description": "Specifies whether washdown coolant should be used and where it is output.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Washdown coolant",
+          "type": "enum",
+          "value": "off",
+          "values": [
+            {
+              "id": "off",
+              "title": "Off"
+            },
+            {
+              "id": "always",
+              "title": "Always on"
+            },
+            {
+              "id": "operationEnd",
+              "title": "End of operation"
+            },
+            {
+              "id": "programEnd",
+              "title": "Program end"
+            }
+          ]
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": true
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": true
+        },
+        "xHomePosition": {
+          "description": "Define the X home position to move to at end of program.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "X-axis home position",
+          "type": "spatial",
+          "value": 0
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44174,
+      "securityRequirements": "",
+      "thumbnail": "brother multi-tasking_thumbnail.png",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Brother",
+      "vendorUrl": "http://www.brother.com",
+      "wcsDefinitions": {
+        "useZeroOffset": false,
+        "wcs": [
+          {
+            "format": "G",
+            "name": "Standard",
+            "range": [54, 59]
+          },
+          {
+            "format": "G54.1 P",
+            "name": "Extended",
+            "range": [1, 300]
+          }
+        ]
+      }
+    },
+    "modification": "165919:13389728484869309",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Local/Autodesk/Autodesk Fusion 360/CAM/cache/posts/fanuc turning.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "_cacheFilePath": "C:\\Users\\Administrator\\AppData\\Local\\Autodesk\\Autodesk Fusion 360\\CAM\\cache\\posts\\fanuc turning.cps",
+      "_fileUrl": "https://cam.autodesk.com/posts/download.php?nostats&name=fanuc%20turning",
+      "allowHelicalMoves": false,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "allowedCircularPlanes": 2,
+      "capabilities": "TURNING",
+      "certificationLevel": 2,
+      "changes": true,
+      "datetime": "2025-02-10 14:52:26",
+      "default_in": {"unit": 0},
+      "default_mm": {"unit": 1},
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "FANUC Turning",
+      "extension": "nc",
+      "filename": "",
+      "forkid": "{88B77760-269E-4D46-8588-30814E7FE9A1}",
+      "hashlog": {
+        "40500": "5fa3436fb44c1ee68376b2d63302c73b63e8fa4dad3571a8bffdc6e358a4a8e4",
+        "40501": "fe3dc5db36a8b9203e10517c328574736e5ab051f78cf74c63968bd933a9b401",
+        "40510": "3e23465a3a3d531ac16db87dbd52edd233fb9a37c27e570327c005d7fbdf0ffd",
+        "40559": "a56f980f2c981ee753a3f85200503741a9953ddee62dbf29f95d07c6e11ec7f1",
+        "40568": "c90b01427844191bff5787a11ca3820972deb6f8ddc077d8ce1538c2914030fb",
+        "40576": "efbd87644902902b814db5a72af20dfebf3c8f75d6138c4bf424a984b1cfc6f1",
+        "40587": "18e9cc6ed56cd6ca177386d3c94eca32dc11c40f8dc1638b7b055d19af1356fe",
+        "40596": "29a99d8c97cc93c130fda805080de006f3b283fbe7b7af203f019bb5c5d6fc69",
+        "40598": "8ae37b71da30a08de9ca946a6e0ff161cade81ff42a77181da449ad1fc4db5e5",
+        "40608": "2bf51bff88e7eaef174c3bf27cd31f700fbbaaa044c876a8cc7277ad88766b8a",
+        "40609": "814c60336c104866311835d27942474404079dfee0050de1fcb06573e5fb99f6",
+        "40627": "1037f9d50c1ba1023927f1dce5e0ff2c1af12c3a612f5615b48e20f8b1409905",
+        "40660": "6b325dad29180b3ddafeee8a9d1f32b8b29eadcd3e31f8962cc2d6d831260e2b",
+        "40702": "39aa1f048de80abb86045e4f2fdc9d3e60dbe3d6f651a3606a16a8d5f84fbbfd",
+        "40767": "a3a559ad2ecf57dfd760836e9c5bc7fc2ca0111f78b0550c8e835849b6ba6018",
+        "40867": "b20ff2a8ff36168d38e463b503ad4a6d9b8c230a9498315ee5afd70bc4e29b41",
+        "40868": "0b91e6fdb00f109480a7fc1c64a7d537947fbf6e04cb9bc21593288cf0cf7de4",
+        "40905": "62030d4ef107e1ead8d5542d7a7fbb268bffc4456a94e9e67cb72a62bd84e2e8",
+        "40975": "b304b56bdc86cd532f0250ba2bfb0d050c83383d21cc8970b3242ac31fa33139",
+        "41000": "9727d54473273a52f33181c754301519a099d4d5441c79bdc037302ab731960d",
+        "41030": "06fdd30209ed9eb3cd20221ac1d512c8abe830dc52640969c16327bb33d11c9f",
+        "41101": "8a9e597b42a4e09c8f86411cdd80f7a0a9ab2411ae7dbfff17c34756217d38b2",
+        "41116": "14a063487e5778c8b7ed9b039836962810f94b97a52567ebb79b4ed11aed6d53",
+        "41117": "433c7384ce91e64e9033448ccb982b772bec60ddb7341aa325d5b99037426c4f",
+        "41128": "457ca76670cd33a0c93ef8108fc4f56030005c1715382a691e1e54a795331da9",
+        "41146": "bd83d9e73354f5222ca3ee58d9da025c5368eaced0975939c94c462a6f944f5e",
+        "41221": "2ede278c13c99eda6704fe3b61df6941c5f0592328bdbf1b272c7c53170200d6",
+        "41259": "810800fb10480b03a4a5f94db2f437d22c21b7cafd49b56638f88981e82a73bc",
+        "41273": "17c9ae9c96d5c2bf358679e7578f4ec5a285895b9cc385047e3f8abcc25991c4",
+        "41275": "1a1cb69d1ec22825d5e07fa024feac013789b58b2db937ddf68acbe7487053a7",
+        "41303": "096ae1cc5e156ad496f9a65335d3e497543fdbd1ba94d575a1a5f57a80e53aa5",
+        "41326": "1706749e951220d6f55d248393a4b9ee75de1944e9db4d97e4979349442066f4",
+        "41439": "51b14f420322b5efd27005167305b656a34847657e4ea07ca1079fc5b2557077",
+        "41442": "48f2738845f0547e6ca65d54b41b5958a5e011171931a878ce7fb8c5bfb5c82f",
+        "41449": "e907750833da047ecd54577b2d5fd8a70d038ec88600b6af4291204d8261dfdd",
+        "41502": "39378d305fdb8b5d0a75054ae5f0a3d7e87440ef65004e83aefaecbd2c56b55a",
+        "41586": "5776a79f83439840142af1ccc3e5f83d33033917c01d934abcbfdfc3d40ebf2c",
+        "41602": "8e0c9dc3373e15954ea3e851151d65e2d2b741aa87ed2a67840944bf766546e7",
+        "41932": "d4f577fbacd0f68afa86b534f7aeaf4ac009f980c706113f7ffbac27e4a0a45a",
+        "41945": "dd91eb8343c6eb0aea4dece94053c605122f5e3110f12ac81bc7f1dda67346ea",
+        "41976": "06d3e7001712a537a57e4644898700fd2be820d1ddc26d263f7942cfe5a7e079",
+        "41981": "8be0f79fc19ec25d92582dfded57f270ce286215b6e4f45dee041f371412bc5d",
+        "42008": "7b7526ab6e94afc23b73098ee67442a3da9401983437f40040f3e85f33c5b823",
+        "42021": "c922cad51087125a5a7c6dc2a28aba8cfe1353dfaf734579cffa254464faa0e8",
+        "42054": "73b8c5885ac2ea8c4223db68b4302871cb4ddedb1686bbf6448787e348b85fc4",
+        "42115": "7d250590f5bc013be01a16afa498f80d16d9d45a7cadae5f3a87b95e73c1c74c",
+        "42171": "82bd13399bea442e86a0866697cfef97c4b5a5b5d56c3dcb6a652bc238ad0ae9",
+        "42207": "4dbd152235fb36e7c89142ef4028e0636457e5224b96c585e396578fdff68c59",
+        "42233": "d574c2674544a93f46780c2b975f2dbb8f0121e27269bf04f97eecf049e3b380",
+        "42410": "6b0103adf8fc822443033340994727edd13bb347a65bf5982b0e0bc042f82e6d",
+        "42413": "e30d40c65b9ce65228b64a98257073d239e3a178f862bb2a17273dd6215c640b",
+        "42453": "9d1031c1f836628d30bad717cee91638a2668bd565d51fb68681afb3c21878a8",
+        "42457": "574c093493f58233da9e01a440a89c7bc9271dbf90a0dc593cb1c5029e296ed2",
+        "42458": "57c0cbff978263a657fb52e12c90545b2af3e66293490ef8ad3434c1d1704a54",
+        "42474": "26092fdb308919acbf4e599d0f96228cc7ff3d776ee7d9fffe42b9f3bccf7b00",
+        "42524": "d2d5571d5d82cb8b49e52563ee2d71ff71572a7e91ea78b73f0f5027f7a1358d",
+        "42571": "4bb9136481c42ddbd5ddc7b8c2b380effa4ed23ab545e5a358237e27c522ef46",
+        "42572": "5258330cd6b95562b6b8b36f7ea8b66da69dd91d4a6670a0ef3084b691153c23",
+        "42578": "1ed0e26221bdaddecbcafada8767baf0dfb27f3da844aefadee621ef0598fa7e",
+        "42584": "de21b7b05b157b0e7eb5635c2bd76f906cec0d55b68be1fb0bfcac33c1602480",
+        "42586": "6dcfc8d74b95ec2c471a34d2cfeecf8f696ed2376705ada7a0a72b40709a1402",
+        "42633": "744054e162f9ceebb6027604094469c88febee3f757fcb0a7eedb79211670cc1",
+        "42714": "c226e781af64f2be8d865d8e5c86b4dbdd387e50df85437b932eef146ec73f64",
+        "42786": "a5b3783fe657c3ee53d733026e73562add2243b0e8d6f110888907141a581ddc",
+        "42801": "efa7a5e17a849ba8339b45fa85a47e17d3a838fb3abe3477e400873a3d50bd41",
+        "42854": "c89dacd0d7f055ab4563d0bee1fa87a14005a465455a646b7261941826c70a2d",
+        "42893": "152e58b4f8a3548360c5403294bebeb997aece10bc9d52ba16acc8e5fdb2a92b",
+        "42957": "fdba0e246cc4d5258e7c0d98b0de6a1655725c1393ae2a5fd8d90fa62ca4d654",
+        "42986": "dc6649b1f5dc76ac808e4202039144da04c0bdeed60e52269c8a744359ea6bcc",
+        "43055": "800a9aea360e6b08c4ad82c660e767afae9c2df029909bc6058dbb6295c13208",
+        "43067": "94d529cbe086dbb9cb3b125a39b6318020d33e135d5ff89a91b0f3b23dce1007",
+        "43137": "74d3d67326f9ac5fe2e8e41f771789354bfa02e033db99d6dd6d022a1f9b693f",
+        "43151": "66cc7d68a44d6d9f52b5a693934acec8d5c09b9d6ed154c43aafc3a91370d985",
+        "43214": "5e9342aa6c06e5ee7ac416f0aad4f0d4499256f994317024d827b1722a122934",
+        "43432": "8e18c61499dac86f4d2ae087a5dcc9afacfdf72245c4a8da8de17b73845f884f",
+        "43462": "c10dfd6f4fb2637be5f3eb99c5ad34d1bf1b3847b0dc8352d871e9cc6e7c017e",
+        "43470": "ecbc9e1689af55ff5807aa516f7f29c05c5256cb89caa538931da9723a916c26",
+        "43575": "78fcf4db58d2d7f3696eff9589c1e7656fe594cfd5a36706c57169e21053dae4",
+        "43588": "40f050b2e373c47aecf7235cb5bd05d3651cec8d747cc4c40e1e3d5e08680e05",
+        "43592": "5bafc80a0b42cf121700bc01f29f8f8eac1d9f1ff5cad5dbabc14a28c0c830ea",
+        "43727": "b26a59b1be3e34995900333bb7c89d7246cc6196f46a2f04bbeef29b057b8ebe",
+        "43790": "10ab63f77b7dace44cb8188783aa6510b12eaf64a5a4035b9020518a6b261951",
+        "43797": "7c49e2639b3d99e7527388033d5ca5668782751c329865e42b368834ff5e395b",
+        "43836": "bb177298a538d20269d039f2db41c6772c2237d88fbf7f06f01b89b4a13a6820",
+        "43838": "482d51a741435d3ae3ec2beab685c6e2df1bf8f10c0c5d5b40183ee098ed8ccc",
+        "43856": "7dcffd795df1c46b69a5240bedd00b684d7c091f6e08d990094d1ba24b307a97",
+        "43979": "4f98324cf7d6737c374d56db3c6e5b618cef58282cf2e9aa91a86a1a4bc426e7",
+        "43987": "9f86f8ea259839245ef20e2a031b7f83406ef36521614c81024cd428d41f8f18",
+        "44057": "20c386f7c98619a81face3292e774f17ad6dbab30120001ec6c866608db0749b",
+        "44059": "8c7f5a56fe1c01000983205db571be52c2eafac76c890661ce448de82a276fa6",
+        "44083": "2405b712645b198a35affc56e3f683e9a3a3a0573e6d5b8fc47bdc489fa60a27",
+        "44087": "30217fc11ab7b52de5019edfe7e45019f0d1f01aa4084b2ecd3cfb2eae3b7d6a",
+        "44113": "2f14cff07f5cc0e24f149b37efd912d49dfe7a44991f347b2db5a185eb31b905",
+        "44164": "361ed61cfbd730736242da3e5b18dfa34a74fae36f50a9da2ef737a4e3eff58a"
+      },
+      "hidden": false,
+      "highFeedMapping": 0,
+      "highFeedrate": 0,
+      "iso": true,
+      "keywords": "",
+      "longDescription": "Generic post for FANUC Turning. Use the property 'type' to switch the FANUC mode A, B, and C. The default mode is A. Use Turret 0 for Positional Turret, Turret 101 for QCTP on X- Post, Turret 102 for QCTP on X+ Post, Turret 103 for Gang Tooling on X- Post, Turret 104 for Gang Tooling on X+ Tool Post.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45909,
+      "ncsample": "fanuc turning.nc",
+      "package": false,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": true,
+      "properties": {
+        "approachStyle": {
+          "description": "Select your desired order for the axes to approach.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Approach style",
+          "type": "enum",
+          "value": "singleLineXZ",
+          "values": [
+            {
+              "id": "ZX",
+              "title": "First Z then X"
+            },
+            {
+              "id": "singleLineXZ",
+              "title": "Both XZ in same line"
+            }
+          ]
+        },
+        "homePositionX": {
+          "description": "G53 X-axis home position.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "G53 home position X",
+          "type": "number",
+          "value": 0
+        },
+        "homePositionZ": {
+          "description": "G53 Z-axis home position.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "G53 home position Z",
+          "type": "number",
+          "value": 0
+        },
+        "maximumSpindleSpeed": {
+          "description": "Defines the maximum spindle speed allowed by your machines.",
+          "group": "configuration",
+          "range": [0, 999999999],
+          "scope": "post",
+          "title": "Max spindle speed",
+          "type": "integer",
+          "value": 6000
+        },
+        "o8": {
+          "description": "Specifies that an 8 digit program number is needed.",
+          "group": "formats",
+          "scope": "post",
+          "title": "8 Digit program number",
+          "type": "boolean",
+          "value": false
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "safePositionMethod": {
+          "description": "Select your desired retract option.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe Retracts",
+          "type": "enum",
+          "value": "G28",
+          "values": [
+            {
+              "id": "G28",
+              "title": "G28"
+            },
+            {
+              "id": "G53",
+              "title": "G53"
+            }
+          ]
+        },
+        "safePositionStyle": {
+          "description": "Select your desired order for the axes to retract.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe retract style",
+          "type": "enum",
+          "value": "XZ",
+          "values": [
+            {
+              "id": "X",
+              "title": "Only X"
+            },
+            {
+              "id": "Z",
+              "title": "Only Z"
+            },
+            {
+              "id": "XZ",
+              "title": "Both X then Z"
+            },
+            {
+              "id": "ZX",
+              "title": "Both Z then X"
+            },
+            {
+              "id": "singleLineXZ",
+              "title": "Both same line"
+            }
+          ]
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 1
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "'Yes' outputs sequence numbers on each block, 'Only on tool change' outputs sequence numbers on tool change blocks only, and 'No' disables the output of sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "enum",
+          "value": "true",
+          "values": [
+            {
+              "id": "true",
+              "title": "Yes"
+            },
+            {
+              "id": "false",
+              "title": "No"
+            },
+            {
+              "id": "toolChange",
+              "title": "Only on tool change"
+            }
+          ]
+        },
+        "type": {
+          "description": "Specifies the type A, B or C.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Type",
+          "type": "enum",
+          "value": "A",
+          "values": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "useCycles": {
+          "description": "Specifies if canned drilling cycles should be used.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use cycles",
+          "type": "boolean",
+          "value": true
+        },
+        "useParametricFeed": {
+          "description": "Specifies the feed value that should be output using a Q value.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "useRigidTapping": {
+          "description": "Select 'Yes' to enable, 'No' to disable, or 'Without spindle direction' to enable rigid tapping without outputting the spindle direction block.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use rigid tapping",
+          "type": "enum",
+          "value": "yes",
+          "values": [
+            {
+              "id": "yes",
+              "title": "Yes"
+            },
+            {
+              "id": "no",
+              "title": "No"
+            },
+            {
+              "id": "without",
+              "title": "Without spindle direction"
+            }
+          ]
+        },
+        "useSimpleThread": {
+          "description": "Enable to output G92 simple threading cycle, disable to output G76 standard threading cycle.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use simple threading cycle",
+          "type": "boolean",
+          "value": true
+        },
+        "useWCS": {
+          "description": "Enable to allow work offset codes to be output (G54-G59)).",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Output work offset codes",
+          "type": "boolean",
+          "value": true
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": false
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": false
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44164,
+      "securityRequirements": "",
+      "thumbnail": "fanuc turning_thumbnail.png",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Fanuc",
+      "vendorUrl": "https://www.fanuc.com",
+      "wcsDefinitions": {
+        "useZeroOffset": false,
+        "wcs": [
+          {
+            "format": "G",
+            "name": "Standard",
+            "range": [54, 59]
+          },
+          {
+            "format": "G54.1 P",
+            "name": "Extended",
+            "range": [1, 300]
+          }
+        ]
+      }
+    },
+    "modification": "75751:13389132086871059",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Local/Autodesk/Autodesk Fusion 360/CAM/cache/posts/fanuc.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "_cacheFilePath": "C:\\Users\\Administrator\\AppData\\Local\\Autodesk\\Autodesk Fusion 360\\CAM\\cache\\posts\\fanuc.cps",
+      "_fileUrl": "https://cam.autodesk.com/posts/download.php?nostats&name=fanuc",
+      "allowHelicalMoves": true,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "capabilities": "MILLING MACHINE_SIMULATION",
+      "certificationLevel": 2,
+      "changes": true,
+      "datetime": "2025-03-07 12:41:08",
+      "default_in": {
+        "highFeedrate": 200,
+        "unit": 0
+      },
+      "default_mm": {
+        "highFeedrate": 5000,
+        "unit": 1
+      },
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "FANUC",
+      "extension": "nc",
+      "filename": "",
+      "forkid": "{04622D27-72F0-45d4-85FB-DB346FD1AE22}",
+      "hashlog": {
+        "40500": "b013192e964b370049715a06d85d6a6c3894a4dd524f71dc4a722acbc44c1df8",
+        "40501": "3efe761afaf97d58a37d425f197175f431191929715f4439c1c853f608de36cf",
+        "40559": "3fbb9c6cd121f6f596f47fe5a63ce450ac29e3958f5daaf3126f6565b1d90fa8",
+        "40568": "6d3b1ddcc11d69c667ed87fa6eeed3a3283e345db300ce57ac4aa4aa823f5787",
+        "40587": "33d97be6cd56819157725b97a29d3b4f447f82cfb0680ea4f6ae63e698447fda",
+        "40589": "c31dfb0ec362cdf58e3bd8f1c45a00511a6c909b7f831b0ef6cad3ab0db7b2c1",
+        "40596": "ca0d74972dd79b556e1394dd9a6960409a5c4901fc77e4a810511f4a95d1f9b5",
+        "40598": "954dfaa59caa77c8542fcb244b0adfb7fa8f9a1c7624a81314f244682c0a5877",
+        "40616": "498dfc3e439845b3720236b8bfcee2c2787d525c1a6d48d9f48eb8e92e82c057",
+        "40626": "321b2ffb2fa0568d3c3bd6c4a951b463f911dc56029b8faa2861d48766f328ae",
+        "40627": "e0c874750a59178dfd0a5ed003314c33599a3b2fc72d20aa1a49f76c76eb57fe",
+        "40767": "53928fae06eb5f21f428ca0f0cceda4d6253c8678a6e95a7d5563107e44b2e11",
+        "40798": "d64661093fba290725f23ba6c15f4f418af1398e78d28dcab7eda39860e99b99",
+        "40867": "a1eca7fb69d291f9f32cc8049db76e59b8dc4129291d1e1324cf71040630010e",
+        "40875": "42bded75f7af6c53601d48339b5f0e733033cadbd5e556306960525640155946",
+        "40905": "b4c7ee55a261dc14ad2373defd3185b5376e458b8f6a2d629049bd2d87f3af06",
+        "40979": "e17e99648516be8453f1bb8bc247b5e116f7e3dc24bcb05858ef40206729663f",
+        "41017": "ee448901474637d2ad700e36f19b66dd47e3913d52f3a9528a15f9a9fa26a62d",
+        "41019": "2a7c439054d5ba769aaf625a9f968e72903c08c7944e5885ead8801bc2c2358e",
+        "41030": "5c2e94e29ca42b975dd45a0dd878f742d694038cb05f94565836f4eec96a40a4",
+        "41059": "5a24480629f17d8ecccd5236f810f06f81e346031d7c25fd3c268304fed55152",
+        "41060": "dbef6241c3e356b0b6456b9d8aae97c6a74691e2731fbc2c5857e20b7d85f193",
+        "41085": "6eca1048cbaf5237cdc554c47580259bf2a3f5b9f3b97975b5e8880a504a9d47",
+        "41120": "9a958d140153b38c0379ee16ae86fa3d61dfaece1ce30dd46f518bae9f431dec",
+        "41123": "d211b42a877835bc6ed5e6fba8d7b6fad9a5311753a271635e9debaf3ab16d5f",
+        "41219": "ae3da677e9d6fd6bd5db9c653af004aee8eefc1df73dd9745086b89111f026a0",
+        "41222": "bd330f4cc6103d33ef87cc30cf8a13a972a2deb516795c02e18a90a1a6d52a68",
+        "41231": "4b00b90868316c8ad49f51b2c569fd2c997c6c3a04c91b98f6c3941b570c7099",
+        "41266": "e7f46d1f64b8096dd6a08b631ce64ae050eabbadb5395d3eae689bef32348bb9",
+        "41273": "6ecaa9d0bcdd5f1ab9cdbe5e330a608b321480710c3ff730c1644dc33efb71f4",
+        "41275": "b14bd17de2fee3f5fd303861581a5307f43870e2e34c7c83b645c4d3f6249697",
+        "41326": "dbf258fc44034d9505c85fa05008020d9b9cfa092228399e09c6496833b5ec54",
+        "41332": "96596a37ff10f7d4f7c3e3fcff6dc66cd124cf4f0f44eb6d18cf18f699c34973",
+        "41449": "8874c91b80ef6952fa5494db7a2583d67d318b1a544533c35e13c3bc364d960d",
+        "41476": "f8a1ad5863e929caeb5deac6d721d16c88f0a88a3d649d6e5b01275f1d8ad51e",
+        "41482": "dfa569720a73c81836bb1a93d4681577ccd478f544729ce16e06a7f3c6849d56",
+        "41508": "f2e8cf64a7a12d285e96819dbf55a0ebef7afdd231baf632174a5922258662ec",
+        "41519": "92332a654b6ebbb1116d05056f0128cc7e7f1518152633a0c418021dbe81f0bb",
+        "41586": "c2ddd462320b8d10b6b7b6cbe7b26415bebea246bd9e9e521c4fd36f7a337d66",
+        "41603": "7dd2c286e47b7dfd0c73b57f0ca38633ce292684f20115a6a2ac0024c793b4df",
+        "41728": "7b85e65ed7516bf94b508af0b1837ebacdb15f4deb79c606b184343b1ffe92e0",
+        "41733": "b8b6599eb43174b088265c00c269eafebaa314ad6c7cdd7df11a9cb9bcaf2864",
+        "41835": "5e34b1d19b8408b2ab4f349b94c48d05cbe17a093e0edc3da8a6caf21a33dfd6",
+        "41862": "e5a51aa5852c293c3ac72ec8f8945d6bffd2c9af65bdb35e21c6d3d6536e5f70",
+        "41922": "75300ba4560131030442b4420c1ca27aeb621fcda4cebf077aa968738f8cdac0",
+        "41945": "bd786ba3135bb2354ac853e06139ffe211b44ad2d583890b047698f7b23526f9",
+        "41960": "c8880e94933e618871999fe7fb29e519e6458562d0c3a3f115470bbc919d9360",
+        "41970": "3261ddb8a2bb498459b8ae0029219e6967121d3855be32f9ed7b58d2928af693",
+        "41976": "317e2c65a58f45bff60d3ca6b4f5c7cadbee5ad2615dcfdc7d513efff2c8138a",
+        "41978": "a5c7b416d4f3387f0b1b1e135f5f0b050ed9aacb6d4e179970638f3b1fb00b55",
+        "41981": "363b3f4a7d91c2fe82751d51b2cd8392df18b8690937634815c09d98205b7f2f",
+        "42013": "dd9927eb76d9cb889bc27cf839d93791fb0332c6b7e72dd5e651f37ad8cd3846",
+        "42014": "ed8663585f2bea497a734b8baa2a98355a2a1edce479d5d46f4aba9765889351",
+        "42021": "df878bf5b226b6a2d8f775884fd1a76320996c82f7cd818cb4bad71cfaca88f7",
+        "42047": "5d798f93fbe2cc0bc867a8ca4ee0c451d0d3692eafe0ca0be15474a165c5e9d4",
+        "42070": "bf8c93342f28a42a27a80ffdf65c0c3bdc7f9aa27ca12d9a583cfdc7f0d56a5c",
+        "42072": "9ac2049a0a45f98a5ce37695dd7865500a02cbff8db640882e367f39e2c744fe",
+        "42112": "3f3a406798f19f5c0b93ee0d1c3e98bc0d7eaa89d8ec1b8361fab759f402ed7d",
+        "42115": "04dc17b498907ec20f2b5eceac4bf8b3fc0d45912bcd204d93a8aabc1f0efbfc",
+        "42145": "e0422463c24a183f189ff7db9fe9fb4a9163b6d5224e77f4e302c1c1a2c84803",
+        "42161": "f234bfef97ce1187cb612a6042d65e23d4ec8be4bfd3fed7bbcc3fc79f3515d3",
+        "42172": "49bf396cff89c642525ea0e0abbe22698b45f42997358e5c774354c0c8eb2fc4",
+        "42233": "b5d6ed8db6d5e438febb4fee07e2f4c008da764e2d61b5337f454b5575ae1665",
+        "42267": "cf41538d75da8a65a527389b2dda412ebf5f8942400503c8932145f3a355f357",
+        "42285": "d2ed009e5681e9656f15dd6bb8c7e96b1ce4c110cc1f41a46925487b4abadb09",
+        "42298": "b9c457c5b77b3a8ab323b2671a326b16ad1246c66e2cdef97b63547e4b6a5770",
+        "42300": "3296dd1c5d6004215f8af89f6a72a71e9c8f4d59f36c5d9662759d04456b25e5",
+        "42357": "22ab9cee11cf56338419e2104f0b89d599a670d016051a60dc79feb813ba6eb1",
+        "42410": "48717a7b3e13ae3342cff1f9b7e03dd42f7c9a0e07c609439fc5174e2c38c544",
+        "42413": "0a83685b01861a3d77ab5135f1e6956cbcbf441ef8636e62dbd014cb2250775f",
+        "42437": "5febe3cf546c34a8454ca22bbe3e2fdaf2624d6e640afae0ce1a0c95dc640498",
+        "42458": "dd31cc70c20673e821f525f0f2549134eadf8455fbcb245fb10206a4bb7b9550",
+        "42474": "1fda61b271d2cb31486fe59264a38588ffd86b3965ca3ce25c3bdf947c522757",
+        "42602": "e1438b78651b21857eb8b2f531710781c67527461fda85f94a833da7d9fdfe95",
+        "42619": "94adc8d529bc1ad274c84a6e2f3ebc4b643a2b8f7808a92d0de1137e3561a3e6",
+        "42624": "65869b7883da1f9e0bfbc6084fc2014c1cdf535cdc95c5338c0abc8fa1742634",
+        "42730": "0cd2a116ff260aa1be676fded19808ae06cb274c365af00858667af79d27f778",
+        "42737": "90b3344df2ec1fe7e520dae6999b9e71714068fc414dc24531fcc53e4b84443c",
+        "42741": "aed519a5504352b058b8a7c077c29cf60e80d7490f9b0fac1e5d7b2327d2ec31",
+        "42801": "371e030211b26e5537527454f21f3ffed22ad4c0f97e30799cd5e0eadc8e29f0",
+        "42813": "4a4203bb3d6cf54458963e8698bfbe15809c976d623fa53975bc79c0b1a2d0bf",
+        "42836": "2a3665cf5d2eb4133ea921c2a36759a39e4297083a9b19e8484278a419f1edcc",
+        "42966": "026246a408fb77d56224e92ee634ec9e042f19b2f971d1508796e5e12236ccb0",
+        "43021": "ab3d3eb565ca0b4513b8e0bc9684d3b12db12fb53d1963d0a29d93f20063e870",
+        "43031": "954ace738154278d0896f1b1b2fb35df5cdc58d9af29964f062ccdba1ce58734",
+        "43039": "7ba79eead4a07b39c9a0eb483dcf155b4bd67b42cd593d969deb9374e7516347",
+        "43042": "9c8e39335963d62dda3efbdee0d75b2996a34e05340b8e5d7993b37d81824456",
+        "43062": "3a23d48b08a93f98ad428b8f63897793d1b38732bbedf335fd9e2ab600a66817",
+        "43065": "025c24f6a815bd95363f28e066f6a071dbceee8229a23ba494c26cb3f55840d9",
+        "43083": "06fe570354d64ce576ba53e28c71c6cc0be51dc3442b29cfc5ae04040329344c",
+        "43133": "b434207b34b63d8d0b3e947371fd7342674c2c98324cdf743a7dbce60eb1f836",
+        "43151": "b797d3fd66f7ad9c29408746e1d8b828cee309e0226148e97e8ba1e7c3929166",
+        "43152": "b13a98ad4df29b0a65e11b9649c9b14dc563925020f5125132e5467cfcd187b0",
+        "43212": "0bb36c39c22706eb56612d4f6ee00dbebf6d6abb4ea75aa622706bcb1528e700",
+        "43262": "d5fe23ee0be8e55b420853100d9ab239e8accf1f68dbac119bc370a1c59b76c8",
+        "43280": "f4dcce04fa6577ab5c4afc08ef8be1c60c4f55d9e44dd5e7ac9e7d03ca650625",
+        "43338": "69ab0aaceee2a94e59a5a3e5e8d46988f90165e88b292a37c6e0d604ade3da42",
+        "43343": "749c16000bec9e2665a431590fb6ddbc96e3b258c117f96dc8fafb202f6ee2be",
+        "43365": "108660dddb709f6211b5960cafcc3812ce6489f6f418941459577d4fdaec8362",
+        "43385": "34cf1fa07265b39e4beb14af9f76a4b601604d7e31aab1de4568898de60cc429",
+        "43430": "6dbab406ba79456b7f1ac7464a7cbe21ec9baf690652010ceb6ad740f0e1c8de",
+        "43462": "0a014f3455b5a382e1cace55386cf596e41df29a426753a237c7ae50c422b5b5",
+        "43470": "64ee26504267250cac228699150cbabd9c3799299f589c2b683d1d92a08b8648",
+        "43494": "8b29d22f0fde38081c33d3ad8778ed1ea1a289f1532b18fa9fd880044754e2e5",
+        "43509": "25d6d2352bc8709947ea2cdae4dee4eb23333d42bc72d08123a73c81438175db",
+        "43526": "e889a0b098fce91c10b502be8e0c87b030bcc884676b3a60b52d27ec554a53ba",
+        "43554": "0da4d7bf2d6b05981822c42699926cf8189df9667c8124adab32044b3caaa61d",
+        "43565": "c54d4ad0afe9dd361ee9094aba2d8c9d39d1665eb51d7fdbda0d236b9de78e94",
+        "43695": "2966a955e679e488ae1c7f47b5afa26f8ffc4f1225d30ae108f4cfd79c70b46c",
+        "43735": "acf67b4423c48fd7a7698790d30525339b3d43b305a80832a0192e6705fb9fd6",
+        "43797": "49b29ce40e986d70ae8a6ed356b88a3bd0dae0d46fc659ad2ff892ff5f23a905",
+        "43798": "5ce6c73ed4ec62f7c3f65b73e2f44313c5d7370191e4acb280b281bf0a7ae9b4",
+        "43814": "1d6ce9fa630335ac9cbb3c3e16e6e37600050b697fa019a68c06b172a30b88bb",
+        "43853": "b57e2ca25a563e397591dd73a3fd1c5a924df55b72400c018db7f4e2f3b50e1d",
+        "43888": "cd22c66b5a60ed7c2c64a0b9738d3ab95c35f5f44f09dc95afc35b470b64200a",
+        "43917": "47563ddebab9afdf64ae77484eaf3fec44321e1d0e0e26a4890fddb7e4065c53",
+        "44013": "ad334688e29676cbe6cb2586fbc71765c7eef0b3fb79dc5cd07c85c55f2f8436",
+        "44025": "e65e2cabc1ba8e94e38028441503438e03f8e8d56771074c868a03747c752076",
+        "44031": "641796ee5dc40dd80e80883c7d7008f50e14d5ebda4ba5f03f60bd79e9573654",
+        "44032": "5b16a8df547c9cbabc75847e7fa7470b2b24864daf2040c2200b86f0c43d4159",
+        "44034": "7bf0fa863953c9bf1ed7d816831f20cb4754f825491a6629cc6f4e83f202e40a",
+        "44035": "9133f5862961e3e3f81ca62568a216d6cb03bbc08147df21ba185996161b1cda",
+        "44039": "883d3a8ec222f71d7e51281c990505e3a72b079a64e21a8f77931817bbbf6531",
+        "44040": "de0e1bac28be2034a3de6e193952dfba8e593f9185f98ef3b53b42a60e87c4f2",
+        "44048": "c5f7c51349cdebc955b5f975046c93811268c2da6117f87211efbec99560ae74",
+        "44056": "524c66a29d4dce2ec5b1ffd9a7cc43ba5a2b2ee9dca8c001db88bcc823e930c7",
+        "44061": "0246915c102c3f9473e0df2147dee8b7787f81ff6c0b5c8cd48f2ca6696fcafb",
+        "44063": "278a360dabb92fda8536c19705cb21c138e75f974866196ca9bcde652f87d06c",
+        "44066": "b150c89253f51420ac66b34e8c3fc6ac8925486d58fb67415d3a6c53bfc44309",
+        "44078": "3147506970f8ffd56c96dc164765c2329985b69eeb0f6d20ab6401ab6fd3ea30",
+        "44083": "50e54735d973165bd083ec94d0a1e5ac8df8175d75ce90c2ad0c54b323b71b56",
+        "44093": "a43bab58e50cecc8223525a8d4793fbbf8338f316a7da4c7dcdbd139a7713e1c",
+        "44094": "ab2d38cb772eb8313f710c922a55af401372417ce7729aee79b80e5524a3d795",
+        "44104": "af3bf51cedd3c02f6b898d49be7d9a0a5a8082dbca148d7a166a36dba7317a96",
+        "44107": "92bfba6d5575ca4300cca86116b3fa0d33e3f0817462757cd34da25a4339af7a",
+        "44115": "9363f35a402603a0c7b6de33635b1b38d97a98da69d0f09c52990c3249ee66e9",
+        "44116": "5670d42aeef8494ed055f29666aa16049b9f24065df0f2c08558e487214d0a28",
+        "44130": "bae5388edef3be3aee62e1691a052e9920208ea1d4d6ca6cd9b9dd0644144671",
+        "44131": "0f76e260147de69b3d9c3b3cdfdbf27585d650811a82b56c7b2840e8e111d25e",
+        "44136": "5859bceb4499d4f81b95a8c427f7a51b42ab2aa36b3239357f9eddae8fc17532",
+        "44139": "284cf1db029eaf64cd54661fbf9b5c46a26dbbdb33f1d4b97af56abce8b3289f",
+        "44143": "f9ae276e8e74aa3c751982af0d58966f9faa0eb0bda74e096aa67548a90485a0",
+        "44145": "ea03d03f6c546c19f6a9e8cc8eba48aa3399a31f7ed3f8cba8d96d041f3165f5",
+        "44155": "e9f5271eca6e600849f6d1b9810d168253968dafede296266938fbe2ffaa4abb",
+        "44159": "ab523ca80a32a1e14853784558f33a2b5b7d9513b994c54b1dfbf899a2b49d6e",
+        "44161": "7044e2f25ce17ad904abc0fcc2625566d7150e92a03c44a37f5d0e5d49b551cc",
+        "44166": "ec662997b8977e44d07310be92e628a7bfd84102afeafe863c06c6a19f09f093",
+        "44168": "2ee7fce0ffb1919c87a6bcf87f23e210c5d520e08e32f7fb7b9b6e9ab5a838b4"
+      },
+      "hidden": false,
+      "highFeedMapping": 0,
+      "highFeedrate": 200,
+      "iso": true,
+      "keywords": "",
+      "longDescription": "Generic post for Fanuc.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45917,
+      "ncsample": "fanuc.nc",
+      "package": false,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": true,
+      "properties": {
+        "allow3DArcs": {
+          "description": "Specifies whether 3D circular arcs are allowed.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Allow 3D arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "forceIJK": {
+          "description": "Force the output of IJK for G2/G3 when not using R mode.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Force IJK",
+          "type": "boolean",
+          "value": false
+        },
+        "o8": {
+          "description": "Specifies that an 8 digit program number is needed.",
+          "group": "formats",
+          "scope": "post",
+          "title": "8 Digit program number",
+          "type": "boolean",
+          "value": false
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "preloadTool": {
+          "description": "Preloads the next tool at a tool change (if any).",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Preload tool",
+          "type": "boolean",
+          "value": true
+        },
+        "safePositionMethod": {
+          "description": "Select your desired retract option. 'Clearance Height' retracts to the operation clearance height.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe Retracts",
+          "type": "enum",
+          "value": "G28",
+          "values": [
+            {
+              "id": "G28",
+              "title": "G28"
+            },
+            {
+              "id": "G30",
+              "title": "G30"
+            },
+            {
+              "id": "G53",
+              "title": "G53"
+            }
+          ]
+        },
+        "safeStartAllOperations": {
+          "description": "Write optional blocks at the beginning of all operations that include all commands to start program.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Safe start all operations",
+          "type": "boolean",
+          "value": false
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 5
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "'Yes' outputs sequence numbers on each block, 'Only on tool change' outputs sequence numbers on tool change blocks only, and 'No' disables the output of sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "enum",
+          "value": "true",
+          "values": [
+            {
+              "id": "true",
+              "title": "Yes"
+            },
+            {
+              "id": "false",
+              "title": "No"
+            },
+            {
+              "id": "toolChange",
+              "title": "Only on tool change"
+            }
+          ]
+        },
+        "singleResultsFile": {
+          "description": "Set to false if you want to store the measurement results for each probe / inspection toolpath in a separate file",
+          "group": "probing",
+          "scope": "post",
+          "title": "Create single results file",
+          "type": "boolean",
+          "value": true
+        },
+        "useFilesForSubprograms": {
+          "description": "If enabled, subroutines will be saved as individual files.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use files for subroutines",
+          "type": "boolean",
+          "value": false
+        },
+        "useG54x4": {
+          "description": "Fanuc 30i supports G54.4 for workpiece error compensation.",
+          "group": "probing",
+          "scope": "post",
+          "title": "Use G54.4",
+          "type": "boolean",
+          "value": false
+        },
+        "useG95": {
+          "description": "Use IPR/MPR instead of IPM/MPM.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use G95",
+          "type": "boolean",
+          "value": false
+        },
+        "useParametricFeed": {
+          "description": "Specifies that the feedrates should be output using parameters.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "usePitchForTapping": {
+          "description": "Enables the use of pitch instead of feed for the F-word in canned tapping cycles. Your CNC control must be setup for pitch mode!",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use pitch for tapping",
+          "type": "boolean",
+          "value": false
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "useRigidTapping": {
+          "description": "Select 'Yes' to enable, 'No' to disable, or 'Without spindle direction' to enable rigid tapping without outputting the spindle direction block.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use rigid tapping",
+          "type": "enum",
+          "value": "yes",
+          "values": [
+            {
+              "id": "yes",
+              "title": "Yes"
+            },
+            {
+              "id": "no",
+              "title": "No"
+            },
+            {
+              "id": "without",
+              "title": "Without spindle direction"
+            }
+          ]
+        },
+        "useSmoothing": {
+          "description": "Defines the smoothing control mode (AICC/AIAPC). 'On' outputs G05.1 Q0/Q1 only, 'Automatic' or 'Level 1-10' outputs G05.1 Q1 with the R value for the desired level.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use smoothing",
+          "type": "enum",
+          "value": "-1",
+          "values": [
+            {
+              "id": "-1",
+              "title": "Off"
+            },
+            {
+              "id": "0",
+              "title": "On"
+            },
+            {
+              "id": "9999",
+              "title": "Automatic"
+            },
+            {
+              "id": "1",
+              "title": "Level 1"
+            },
+            {
+              "id": "2",
+              "title": "Level 2"
+            },
+            {
+              "id": "3",
+              "title": "Level 3"
+            },
+            {
+              "id": "4",
+              "title": "Level 4"
+            },
+            {
+              "id": "5",
+              "title": "Level 5"
+            },
+            {
+              "id": "6",
+              "title": "Level 6"
+            },
+            {
+              "id": "7",
+              "title": "Level 7"
+            },
+            {
+              "id": "8",
+              "title": "Level 8"
+            },
+            {
+              "id": "9",
+              "title": "Level 9"
+            },
+            {
+              "id": "10",
+              "title": "Level 10"
+            }
+          ]
+        },
+        "useSubroutines": {
+          "description": "Select your desired subroutine option. 'All Operations' creates subroutines per each operation, 'Cycles' creates subroutines for cycle operations on same holes, and 'Patterns' creates subroutines for patterned operations.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use subroutines",
+          "type": "enum",
+          "value": "none",
+          "values": [
+            {
+              "id": "none",
+              "title": "No"
+            },
+            {
+              "id": "allOperations",
+              "title": "All Operations"
+            },
+            {
+              "id": "allPatterns",
+              "title": "All Operations & Patterns"
+            },
+            {
+              "id": "cycles",
+              "title": "Cycles"
+            },
+            {
+              "id": "all",
+              "title": "Operations, Patterns, Cycles"
+            },
+            {
+              "id": "patterns",
+              "title": "Patterns"
+            }
+          ]
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": true
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": true
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44168,
+      "securityRequirements": "",
+      "thumbnail": "fanuc_thumbnail.png",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Fanuc",
+      "vendorUrl": "http://www.fanuc.com",
+      "wcsDefinitions": {
+        "useZeroOffset": false,
+        "wcs": [
+          {
+            "format": "G",
+            "name": "Standard",
+            "range": [54, 59]
+          },
+          {
+            "format": "G54.1 P",
+            "name": "Extended",
+            "range": [1, 300]
+          }
+        ]
+      }
+    },
+    "modification": "178524:13389131673493943",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Local/Autodesk/Autodesk Fusion 360/CAM/cache/posts/setup-sheet.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "_cacheFilePath": "C:\\Users\\Administrator\\AppData\\Local\\Autodesk\\Autodesk Fusion 360\\CAM\\cache\\posts\\setup-sheet.cps",
+      "_fileUrl": "https://cam.autodesk.com/posts/download.php?nostats&name=setup-sheet",
+      "allowHelicalMoves": false,
+      "allowMachineChangeOnSection": true,
+      "allowSpiralMoves": false,
+      "allowedCircularPlanes": 0,
+      "capabilities": "SETUP_SHEET",
+      "certificationLevel": 2,
+      "changes": true,
+      "datetime": "2024-03-12 15:03:07",
+      "default_in": {"unit": 0},
+      "default_mm": {"unit": 1},
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "Setup Sheet (HTML)",
+      "extension": "html",
+      "filename": "",
+      "forkid": "{BC98C807-412C-4ffc-BD2B-ABB3F0A59DB8}",
+      "hashlog": {
+        "40501": "a4fd237feb09865a4f6ad738b797bd7e0ec5f12bf7b215db23e24e44ed35aec8",
+        "40509": "0047b44f9c7c2173d68d8fe3056db48b68ba60335823152abdfba327ab9992e0",
+        "40523": "d70be5994fd0bf9108b23ccda8ad5c30974c80130fe6a6dce1f1c8fdccfd51e5",
+        "40524": "2bb9c870e84d3d9c2ad0e8b1a887ff7a15c79bde2179fcb300ae54a87a3ae076",
+        "40529": "19c6c2bc71e2a4f097265b639362f1e3749643571f6baec16f110a541d1b711b",
+        "40539": "dc89112a06e979bc46db608a4339a4edd2edf69bf23dd1a91db2b5a24790d477",
+        "40541": "af8a0822baff1b535d02afabe0471b72fcfd4a92f20b65630ef4232890d2ed3c",
+        "40554": "6d5694e069ef102ad769a4831313f800d4aad4511449c4d09e4d8d24c08656d8",
+        "40556": "7717e1b0c9a7b329fdfcd6497d9ca25dd6d18b112515aac9a9d14a6f49f719dd",
+        "40562": "8f923e0e6aa72b67060ea2ee32be665987364aab8381c43727c769b31dc67509",
+        "40563": "709d84eb7dba6ac526ad7d9dded206695794470e2efde09784d684f927c368d3",
+        "40565": "25e663a98c3454f230cc7b95535ab961fb3d6828e4bc70c96bc935a789e47636",
+        "40569": "125c2560b1e49ca90ba74362a891992bbe3e702ac61ff9d005fc38f95b1c14a6",
+        "40616": "fe8ae43c7e47f7d6be63cb62befc41853677448e1b36b697d3971f22409fd6d1",
+        "40627": "e04a75e7a2d1926193723ddcdb257b5507a4f53c0b7cfaa6017a4700562b344a",
+        "40641": "e2f22acd773db2db4d8f7d39a28d23193c3da82ee92bb92d848c9dd73230a8ca",
+        "40661": "1254027991a3f65ef72b6e46d5a61e5271ae07d4e3ce4cd2e7fedb1c7ce6b06b",
+        "40766": "800e78102ce2c694ab1214ab3d9944547aece74b60fd4c77dcb496f602bfca45",
+        "40767": "eb006c283ecbc7e33b5108b12abaca6fe4c5f6e23b8bcc613e9326dee8115834",
+        "40785": "1916bc3f6630e0f0c5000ee59b968279d76d25a93d4634cacb91551f6a7e7be2",
+        "40792": "c677d5e6a5e9cad071154e376f8b9a767e7d6882f17419bbe6026d4ccd18cde6",
+        "40867": "8964b45fcc0f9d0945ca870796d2e42c4f04363806d371c51560c8b1d5b496d4",
+        "40886": "33657aaca24be0c81d4cc90f77f2877b35511d5360bccb467d865b303bcbc0f5",
+        "40941": "46d3e8531c29c38faff9ec964383ffea3775ec70b562d74f8f744db0a622f0ee",
+        "41091": "465cd63aa6739a156458d8c71a36e22380ac8b83b15a24feab5c903f58b0476c",
+        "41183": "85fe7d0328a1fd72fb73707a5f63d57a8c32a989fbe37f1da3770853a902dba6",
+        "41218": "66407f9fdc22b504f723618561fd31c445d0374c7a10ad5db7b2ad614e7016e7",
+        "41237": "89c183dcce5865495bfdefcfb995d70273fb4bb8c41203fb2de12daac5787efe",
+        "41248": "469ba23b4248c76d720a7e9d3b8c42e09fa7f38f0c2320b77ac6de43f002d15c",
+        "41249": "7135f9b79bc6ec01a76f092ac5e0c4d6746a7b602a01b3024e578197efdb6353",
+        "41263": "81db2de03ec39761ae92b7e5f8de8580dcbb69c8337005fb1f4e2cefd0178b71",
+        "41335": "4d134cdd8dab4eecec36f3da745064e17212cb24961f221f58da81887e037de9",
+        "41349": "dfe73aca7f95ff87c604993f777e682014207ea1f4180506167f59819ccb9f3f",
+        "41389": "c1fc1ece3e1fd1c3493525eac01e8b607588d7ad11067b8d575b7f3ea3facd24",
+        "41413": "5fd22a7a0d0703142547a20d8255f00b3b16133b4d807758b0ade6e341338ac4",
+        "41414": "e47c6c388a8c086624d7172d272dd661863b8cd47a3534c76e0b253e20240973",
+        "41415": "2346f1bf445f1ed5f09df13b926c8e6492878d3e0e15e90d47331182a54a88e4",
+        "41416": "0604ac28e7f8394511b427d0fae95b86458675d98ace827f1bcfe5802c30f3be",
+        "41417": "025913a15e66d02b8fbc5d8ed722bc325b91fa71449bf44188dd240609745aa8",
+        "41418": "20acdaf11245ba9ccf8065e50744442ee1445a7f8f64f318c60caeb3ea5aac07",
+        "41419": "81452db2416accc5963103d72a7d9a1a89606878be9c78e22a6f978cfa910e24",
+        "41420": "7ad7794cf7e42564e33894aab9a1143e07cfd2e93574221337aa02ae9c94e55e",
+        "41421": "de892e785c006b2acf96f2183af9be0b8cf64879842a9b065457b4e4a1b3c327",
+        "41422": "ac6ff2149430a513bdedcc9712106bd3a3ba01aa2e70bfd282da0810cb47a4fa",
+        "41423": "dfd251acf5a864d6adb832427f984d134efddf5b5a684e60c6a378949fe2db35",
+        "41424": "57ac74efbe7a4a3e712b97e2e1ca66824d12ea2e5ed1a0dfbe4325373de10e4f",
+        "41425": "4e8831aff50a44dc0743f4767cf8d991ef4d654fb5bbb8153e76e97f784c8451",
+        "41428": "cce4959d9d69ad6480f95498c5891ac205027962228b48329734178266106074",
+        "41469": "836cfa3b07fa78428111e12f634d5ac349941b4a3a6e0593cedb619bdd12b10e",
+        "41472": "cab16f91cd01d883ff2504efd3d0d17b1d1bc232a067370dd3f544ade6f3ac38",
+        "41524": "57a8fda6fdb074d76818a77f34c7b4ea210033cb81a140172676cf5181276b0b",
+        "41559": "2a31d5915ef55a8af7a1c928784ed29c0ccd0e6afc9f8ee16b229d8ebf82d607",
+        "41560": "44150b8cad6955ed6762e8aa66557ae7d1f20aadba324716ab56e5841e8c77be",
+        "41588": "a8c2f043c091ebd266a3503f9a8fef5ba4a6051bdea0163cfda19030254d2356",
+        "41601": "56f59993059055f9c2f8595bc8956682b1d8df02c6199c04c43171dee2c2c202",
+        "41621": "184607da16ba67cf9cc269b4083bfc1a232efbf6e949fad6c86e9ec0cf9d5a55",
+        "41622": "5085380becd024ec2bbb8b6fde4a2bc58be56897a946cb9ef98ef2e1ac4ae632",
+        "41640": "f56c83a39f90537ec7f20ee68487cf5edc88826debe944bbda372724acc6a79d",
+        "41786": "db51600f9ddec8cfa18c1a452bda0eb6d0677ae3d0fbd44ba6e2f4793c4ccbe8",
+        "42233": "9cc3d7dc8435ca8ea32e0ac08f82c0785bfbb0a31a307f5b1538aee0909ef89d",
+        "42284": "1b39748d27c469ab3d779c55e99a04b509420aac918c0e184740b503cbed8a76",
+        "42444": "52fb4c749d3013a8ae5a6782b5a8c7c2572d88527205382efddac5926ee4c8b3",
+        "42474": "005f6b846f12ce99d1a1ced297736e15a10dc1e488b054a388adaad65a57fdcc",
+        "42485": "b21a8043733d2672cdd0cfa2c7eba05358f6d7a6813bb94a8a7492bcc4023add",
+        "43151": "6b0a9d4d77d6d9a638baeac29ed77fee269201a03e4335bde2c59c14419bf208",
+        "43279": "baa54ac104534e8946aff0a9d55e6f5f10bd1eb98ab196987c9af2beb6e96d0b",
+        "43470": "e5adf4d097148f253ff7e6d394ef5de566d94632fa2a9f01ee3845bd29209976",
+        "44029": "2dc82017b502402ccb92577de4eed883d6bfd5e2a304a722e3ac4f56730a7b07",
+        "44115": "658845a7a75fd810b7ef6809d91ae7411cda3d368a5c118e65c4e7c3c1445a12"
+      },
+      "hidden": false,
+      "highFeedMapping": 0,
+      "highFeedrate": 0,
+      "keywords": "MODEL_IMAGE PREVIEW_IMAGE",
+      "longDescription": "Setup sheet for generating an HTML document with the relevant details for the setup, tools, and individual operations. You can print the document directly or alternatively convert it to a PDF file for later reference.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/html",
+      "minimumChordLength": 0.01,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45948,
+      "package": true,
+      "pdfsample": "setup-sheet.pdf",
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": false,
+      "properties": {
+        "embedImages": {
+          "description": "If enabled, images are embedded into the HTML file.",
+          "scope": "post",
+          "title": "Embed images",
+          "type": "boolean",
+          "value": true
+        },
+        "embedStylesheet": {
+          "description": "Embeds the stylesheet in the HTML code.",
+          "scope": "post",
+          "title": "Embed stylesheet",
+          "type": "boolean",
+          "value": true
+        },
+        "forcePreview": {
+          "description": "Enable to force a preview picture for all instances of a pattern.",
+          "scope": "post",
+          "title": "Force preview",
+          "type": "boolean",
+          "value": false
+        },
+        "previewWidth": {
+          "description": "Specifies the width of the preview image.",
+          "scope": "post",
+          "title": "Preview width",
+          "type": "string",
+          "value": "8cm"
+        },
+        "rapidFeed": {
+          "description": "Sets the rapid traversal feedrate. Set this to get more accurate cycle times.",
+          "scope": "post",
+          "title": "Rapid feed",
+          "type": "number",
+          "value": 5000
+        },
+        "showDocumentPath": {
+          "description": "Specifies that the document path should be output.",
+          "scope": "post",
+          "title": "Show document path",
+          "type": "boolean",
+          "value": true
+        },
+        "showFooter": {
+          "description": "Specifies whether a footer should be included in the HTML setup sheet.",
+          "scope": "post",
+          "title": "Show footer",
+          "type": "boolean",
+          "value": true
+        },
+        "showModelImage": {
+          "description": "If enabled, a model image will be included in the setup sheet.",
+          "scope": "post",
+          "title": "Show model image",
+          "type": "boolean",
+          "value": true
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": true
+        },
+        "showOperations": {
+          "description": "Enable to output information for each operation.",
+          "scope": "post",
+          "title": "Show operations",
+          "type": "boolean",
+          "value": true
+        },
+        "showPercentages": {
+          "description": "Specifies that the percentage of the total cycle time should be shown for each operation cycle time.",
+          "scope": "post",
+          "title": "Show percentages",
+          "type": "boolean",
+          "value": true
+        },
+        "showPreviewImage": {
+          "description": "If enabled, a preview image will be included in the setup sheet.",
+          "scope": "post",
+          "title": "Show preview image",
+          "type": "boolean",
+          "value": true
+        },
+        "showRapidDistance": {
+          "description": "Specifies whether the rapid distance should be output.",
+          "scope": "post",
+          "title": "Show rapid distance",
+          "type": "boolean",
+          "value": true
+        },
+        "showToolImage": {
+          "description": "If enabled, tool images will be included in the seutp sheet.",
+          "scope": "post",
+          "title": "Show tool images",
+          "type": "boolean",
+          "value": true
+        },
+        "showTools": {
+          "description": "Enable to see information for each tool.",
+          "scope": "post",
+          "title": "Show tools",
+          "type": "boolean",
+          "value": true
+        },
+        "showTotals": {
+          "description": "Enable to see total information.",
+          "scope": "post",
+          "title": "Show totals",
+          "type": "boolean",
+          "value": true
+        },
+        "toolChangeTime": {
+          "description": "Sets the tool change time in seconds. Set this to get more accurate cycle times.",
+          "scope": "post",
+          "title": "Tool change time",
+          "type": "number",
+          "value": 15
+        },
+        "useUnitSymbol": {
+          "description": "Specifies that symbols should be used for units (some printers may not support this).",
+          "scope": "post",
+          "title": "Use unit symbol",
+          "type": "boolean",
+          "value": false
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44115,
+      "securityRequirements": "",
+      "source": "C:\\Users\\Administrator\\AppData\\Local\\Autodesk\\Autodesk Fusion 360\\CAM\\cache\\posts\\setup-sheet.cps",
+      "tolerance": 0.001,
+      "unit": 0,
+      "vendor": "Autodesk",
+      "vendorUrl": "http://www.autodesk.com"
+    },
+    "modification": "73539:13389113590000000",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/LC03 Fanuc Turning.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "allowHelicalMoves": true,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "capabilities": "TURNING",
+      "certificationLevel": 2,
+      "datetime": "2020-01-21 14:14:08",
+      "default_in": {"unit": 0},
+      "default_mm": {"unit": 1},
+      "dependencies": "",
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "FANUC Turning",
+      "extension": "lc3",
+      "forkid": "{88B77760-269E-4d46-8588-30814E7FE9A1}",
+      "highFeedMapping": 0,
+      "highFeedrate": 0,
+      "iso": true,
+      "keywords": "",
+      "legal": "Copyright (C) 2012-2019 by Autodesk, Inc.",
+      "longDescription": "Generic turning post for FANUC. Use the property 'type' to switch the FANUC mode A, B, and C. The default mode is A. Use Turret 0 for Positional Turret, Turret 101 for QCTP on X- Post, Turret 102 for QCTP on X+ Post, Turret 103 for Gang Tooling on X- Post, Turret 104 for Gang Tooling on X+ Tool Post.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 40783,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": true,
+      "properties": {
+        "g53HomePositionX": {
+          "description": "G53 X-axis home position.",
+          "scope": "post",
+          "title": "G53 home position X",
+          "type": "number",
+          "value": 0
+        },
+        "g53HomePositionZ": {
+          "description": "G53 Z-axis home position.",
+          "scope": "post",
+          "title": "G53 home position Z",
+          "type": "number",
+          "value": 0
+        },
+        "maximumSpindleSpeed": {
+          "description": "Defines the maximum spindle speed allowed by your machines.",
+          "range": [0, 999999999],
+          "scope": "post",
+          "title": "Max spindle speed",
+          "type": "integer",
+          "value": 6000
+        },
+        "o8": {
+          "description": "Specifies that an 8 digit program number is needed.",
+          "scope": "post",
+          "title": "8 Digit program number",
+          "type": "boolean",
+          "value": false
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "preloadTool": {
+          "description": "Preloads the next tool at a tool change (if any).",
+          "group": 1,
+          "scope": "post",
+          "title": "Preload tool",
+          "type": "boolean",
+          "value": false
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": 1,
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 1
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": 1,
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "Use sequence numbers for each block of outputted code.",
+          "group": 1,
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "boolean",
+          "value": true
+        },
+        "type": {
+          "description": "Specifies the type A, B or C.",
+          "scope": "post",
+          "title": "Type",
+          "type": "enum",
+          "value": "A",
+          "values": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "useParametricFeed": {
+          "description": "Specifies the feed value that should be output using a Q value.",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "useRigidTapping": {
+          "description": "Select 'Yes' to enable, 'No' to disable, or 'Without spindle direction' to enable rigid tapping without outputting the spindle direction block.",
+          "scope": "post",
+          "title": "Use rigid tapping",
+          "type": "enum",
+          "value": "yes",
+          "values": [
+            {
+              "id": "yes",
+              "title": "Yes"
+            },
+            {
+              "id": "no",
+              "title": "No"
+            },
+            {
+              "id": "without",
+              "title": "Without spindle direction"
+            }
+          ]
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the code.",
+          "group": 0,
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": false
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the code.",
+          "group": 0,
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": false
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 42631,
+      "securityRequirements": "",
+      "source": "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/LC03 Fanuc Turning.cps",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Fanuc",
+      "vendorUrl": "http://www.fanuc.com"
+    },
+    "modification": "62199:13389297772049188",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/fanuc turning.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "allowHelicalMoves": false,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "allowedCircularPlanes": 2,
+      "capabilities": "TURNING",
+      "certificationLevel": 2,
+      "datetime": "2025-02-10 14:52:26",
+      "default_in": {"unit": 0},
+      "default_mm": {"unit": 1},
+      "dependencies": "",
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "FANUC Turning",
+      "extension": "nc",
+      "forkid": "{88B77760-269E-4D46-8588-30814E7FE9A1}",
+      "highFeedMapping": 0,
+      "highFeedrate": 0,
+      "iso": true,
+      "keywords": "",
+      "legal": "Copyright (C) 2012-2025 by Autodesk, Inc.",
+      "longDescription": "Generic post for FANUC Turning. Use the property 'type' to switch the FANUC mode A, B, and C. The default mode is A. Use Turret 0 for Positional Turret, Turret 101 for QCTP on X- Post, Turret 102 for QCTP on X+ Post, Turret 103 for Gang Tooling on X- Post, Turret 104 for Gang Tooling on X+ Tool Post.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45909,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": true,
+      "properties": {
+        "approachStyle": {
+          "description": "Select your desired order for the axes to approach.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Approach style",
+          "type": "enum",
+          "value": "singleLineXZ",
+          "values": [
+            {
+              "id": "ZX",
+              "title": "First Z then X"
+            },
+            {
+              "id": "singleLineXZ",
+              "title": "Both XZ in same line"
+            }
+          ]
+        },
+        "homePositionX": {
+          "description": "G53 X-axis home position.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "G53 home position X",
+          "type": "number",
+          "value": 0
+        },
+        "homePositionZ": {
+          "description": "G53 Z-axis home position.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "G53 home position Z",
+          "type": "number",
+          "value": 0
+        },
+        "maximumSpindleSpeed": {
+          "description": "Defines the maximum spindle speed allowed by your machines.",
+          "group": "configuration",
+          "range": [0, 999999999],
+          "scope": "post",
+          "title": "Max spindle speed",
+          "type": "integer",
+          "value": 2000
+        },
+        "o8": {
+          "description": "Specifies that an 8 digit program number is needed.",
+          "group": "formats",
+          "scope": "post",
+          "title": "8 Digit program number",
+          "type": "boolean",
+          "value": false
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "safePositionMethod": {
+          "description": "Select your desired retract option.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe Retracts",
+          "type": "enum",
+          "value": "G28",
+          "values": [
+            {
+              "id": "G28",
+              "title": "G28"
+            },
+            {
+              "id": "G53",
+              "title": "G53"
+            }
+          ]
+        },
+        "safePositionStyle": {
+          "description": "Select your desired order for the axes to retract.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe retract style",
+          "type": "enum",
+          "value": "XZ",
+          "values": [
+            {
+              "id": "X",
+              "title": "Only X"
+            },
+            {
+              "id": "Z",
+              "title": "Only Z"
+            },
+            {
+              "id": "XZ",
+              "title": "Both X then Z"
+            },
+            {
+              "id": "ZX",
+              "title": "Both Z then X"
+            },
+            {
+              "id": "singleLineXZ",
+              "title": "Both same line"
+            }
+          ]
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 1
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "'Yes' outputs sequence numbers on each block, 'Only on tool change' outputs sequence numbers on tool change blocks only, and 'No' disables the output of sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "enum",
+          "value": "true",
+          "values": [
+            {
+              "id": "true",
+              "title": "Yes"
+            },
+            {
+              "id": "false",
+              "title": "No"
+            },
+            {
+              "id": "toolChange",
+              "title": "Only on tool change"
+            }
+          ]
+        },
+        "type": {
+          "description": "Specifies the type A, B or C.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Type",
+          "type": "enum",
+          "value": "A",
+          "values": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "useCycles": {
+          "description": "Specifies if canned drilling cycles should be used.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use cycles",
+          "type": "boolean",
+          "value": true
+        },
+        "useParametricFeed": {
+          "description": "Specifies the feed value that should be output using a Q value.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": true
+        },
+        "useRigidTapping": {
+          "description": "Select 'Yes' to enable, 'No' to disable, or 'Without spindle direction' to enable rigid tapping without outputting the spindle direction block.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use rigid tapping",
+          "type": "enum",
+          "value": "yes",
+          "values": [
+            {
+              "id": "yes",
+              "title": "Yes"
+            },
+            {
+              "id": "no",
+              "title": "No"
+            },
+            {
+              "id": "without",
+              "title": "Without spindle direction"
+            }
+          ]
+        },
+        "useSimpleThread": {
+          "description": "Enable to output G92 simple threading cycle, disable to output G76 standard threading cycle.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use simple threading cycle",
+          "type": "boolean",
+          "value": true
+        },
+        "useWCS": {
+          "description": "Enable to allow work offset codes to be output (G54-G59)).",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Output work offset codes",
+          "type": "boolean",
+          "value": false
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": false
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": false
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44164,
+      "securityRequirements": "",
+      "source": "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/fanuc turning.cps",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Fanuc",
+      "vendorUrl": "https://www.fanuc.com",
+      "wcsDefinitions": {
+        "useZeroOffset": false,
+        "wcs": [
+          {
+            "format": "G",
+            "name": "Standard",
+            "range": [54, 59]
+          },
+          {
+            "format": "G54.1 P",
+            "name": "Extended",
+            "range": [1, 300]
+          }
+        ]
+      }
+    },
+    "modification": "76046:13389221745777451",
+    "sandbox": true,
+    "version": 1
+  },
+  "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/fanuc.cps": {
+    "featureFlag": false,
+    "interrogation": {
+      "allowHelicalMoves": true,
+      "allowMachineChangeOnSection": false,
+      "allowSpiralMoves": false,
+      "capabilities": "MILLING MACHINE_SIMULATION",
+      "certificationLevel": 2,
+      "datetime": "2025-03-07 12:41:08",
+      "default_in": {
+        "highFeedrate": 200,
+        "unit": 0
+      },
+      "default_mm": {
+        "highFeedrate": 5000,
+        "unit": 1
+      },
+      "dependencies": "",
+      "deprecated": false,
+      "deprecatedDescription": "",
+      "description": "FANUC",
+      "extension": "nc",
+      "forkid": "{04622D27-72F0-45d4-85FB-DB346FD1AE22}",
+      "highFeedMapping": 0,
+      "highFeedrate": 200,
+      "iso": true,
+      "keywords": "",
+      "legal": "Copyright (C) 2012-2025 by Autodesk, Inc.",
+      "longDescription": "Generic post for Fanuc.",
+      "maximumCircularRadius": 1000,
+      "maximumCircularSweep": 3.14159265358979,
+      "mimetype": "text/plain",
+      "minimumChordLength": 0.25,
+      "minimumCircularRadius": 0.01,
+      "minimumCircularSweep": 0.000174532925199433,
+      "minimumRevision": 45917,
+      "preventPost": false,
+      "programComment": "",
+      "programName": "UNNAMED",
+      "programNameIsInteger": true,
+      "properties": {
+        "allow3DArcs": {
+          "description": "Specifies whether 3D circular arcs are allowed.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Allow 3D arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "forceIJK": {
+          "description": "Force the output of IJK for G2/G3 when not using R mode.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Force IJK",
+          "type": "boolean",
+          "value": false
+        },
+        "o8": {
+          "description": "Specifies that an 8 digit program number is needed.",
+          "group": "formats",
+          "scope": "post",
+          "title": "8 Digit program number",
+          "type": "boolean",
+          "value": false
+        },
+        "optionalStop": {
+          "description": "Outputs optional stop code during when necessary in the code.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Optional stop",
+          "type": "boolean",
+          "value": true
+        },
+        "preloadTool": {
+          "description": "Preloads the next tool at a tool change (if any).",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Preload tool",
+          "type": "boolean",
+          "value": true
+        },
+        "safePositionMethod": {
+          "description": "Select your desired retract option. 'Clearance Height' retracts to the operation clearance height.",
+          "group": "homePositions",
+          "scope": "post",
+          "title": "Safe Retracts",
+          "type": "enum",
+          "value": "G28",
+          "values": [
+            {
+              "id": "G28",
+              "title": "G28"
+            },
+            {
+              "id": "G30",
+              "title": "G30"
+            },
+            {
+              "id": "G53",
+              "title": "G53"
+            }
+          ]
+        },
+        "safeStartAllOperations": {
+          "description": "Write optional blocks at the beginning of all operations that include all commands to start program.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Safe start all operations",
+          "type": "boolean",
+          "value": false
+        },
+        "separateWordsWithSpace": {
+          "description": "Adds spaces between words if 'yes' is selected.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Separate words with space",
+          "type": "boolean",
+          "value": true
+        },
+        "sequenceNumberIncrement": {
+          "description": "The amount by which the sequence number is incremented by in each block.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Sequence number increment",
+          "type": "integer",
+          "value": 5
+        },
+        "sequenceNumberStart": {
+          "description": "The number at which to start the sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Start sequence number",
+          "type": "integer",
+          "value": 10
+        },
+        "showNotes": {
+          "description": "Writes operation notes as comments in the outputted code.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Show notes",
+          "type": "boolean",
+          "value": false
+        },
+        "showSequenceNumbers": {
+          "description": "'Yes' outputs sequence numbers on each block, 'Only on tool change' outputs sequence numbers on tool change blocks only, and 'No' disables the output of sequence numbers.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Use sequence numbers",
+          "type": "enum",
+          "value": "true",
+          "values": [
+            {
+              "id": "true",
+              "title": "Yes"
+            },
+            {
+              "id": "false",
+              "title": "No"
+            },
+            {
+              "id": "toolChange",
+              "title": "Only on tool change"
+            }
+          ]
+        },
+        "singleResultsFile": {
+          "description": "Set to false if you want to store the measurement results for each probe / inspection toolpath in a separate file",
+          "group": "probing",
+          "scope": "post",
+          "title": "Create single results file",
+          "type": "boolean",
+          "value": true
+        },
+        "useFilesForSubprograms": {
+          "description": "If enabled, subroutines will be saved as individual files.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use files for subroutines",
+          "type": "boolean",
+          "value": false
+        },
+        "useG54x4": {
+          "description": "Fanuc 30i supports G54.4 for workpiece error compensation.",
+          "group": "probing",
+          "scope": "post",
+          "title": "Use G54.4",
+          "type": "boolean",
+          "value": false
+        },
+        "useG95": {
+          "description": "Use IPR/MPR instead of IPM/MPM.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use G95",
+          "type": "boolean",
+          "value": false
+        },
+        "useParametricFeed": {
+          "description": "Specifies that the feedrates should be output using parameters.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Parametric feed",
+          "type": "boolean",
+          "value": false
+        },
+        "usePitchForTapping": {
+          "description": "Enables the use of pitch instead of feed for the F-word in canned tapping cycles. Your CNC control must be setup for pitch mode!",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use pitch for tapping",
+          "type": "boolean",
+          "value": false
+        },
+        "useRadius": {
+          "description": "If yes is selected, arcs are outputted using radius values rather than IJK.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Radius arcs",
+          "type": "boolean",
+          "value": false
+        },
+        "useRigidTapping": {
+          "description": "Select 'Yes' to enable, 'No' to disable, or 'Without spindle direction' to enable rigid tapping without outputting the spindle direction block.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use rigid tapping",
+          "type": "enum",
+          "value": "yes",
+          "values": [
+            {
+              "id": "yes",
+              "title": "Yes"
+            },
+            {
+              "id": "no",
+              "title": "No"
+            },
+            {
+              "id": "without",
+              "title": "Without spindle direction"
+            }
+          ]
+        },
+        "useSmoothing": {
+          "description": "Defines the smoothing control mode (AICC/AIAPC). 'On' outputs G05.1 Q0/Q1 only, 'Automatic' or 'Level 1-10' outputs G05.1 Q1 with the R value for the desired level.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use smoothing",
+          "type": "enum",
+          "value": "-1",
+          "values": [
+            {
+              "id": "-1",
+              "title": "Off"
+            },
+            {
+              "id": "0",
+              "title": "On"
+            },
+            {
+              "id": "9999",
+              "title": "Automatic"
+            },
+            {
+              "id": "1",
+              "title": "Level 1"
+            },
+            {
+              "id": "2",
+              "title": "Level 2"
+            },
+            {
+              "id": "3",
+              "title": "Level 3"
+            },
+            {
+              "id": "4",
+              "title": "Level 4"
+            },
+            {
+              "id": "5",
+              "title": "Level 5"
+            },
+            {
+              "id": "6",
+              "title": "Level 6"
+            },
+            {
+              "id": "7",
+              "title": "Level 7"
+            },
+            {
+              "id": "8",
+              "title": "Level 8"
+            },
+            {
+              "id": "9",
+              "title": "Level 9"
+            },
+            {
+              "id": "10",
+              "title": "Level 10"
+            }
+          ]
+        },
+        "useSubroutines": {
+          "description": "Select your desired subroutine option. 'All Operations' creates subroutines per each operation, 'Cycles' creates subroutines for cycle operations on same holes, and 'Patterns' creates subroutines for patterned operations.",
+          "group": "preferences",
+          "scope": "post",
+          "title": "Use subroutines",
+          "type": "enum",
+          "value": "none",
+          "values": [
+            {
+              "id": "none",
+              "title": "No"
+            },
+            {
+              "id": "allOperations",
+              "title": "All Operations"
+            },
+            {
+              "id": "allPatterns",
+              "title": "All Operations & Patterns"
+            },
+            {
+              "id": "cycles",
+              "title": "Cycles"
+            },
+            {
+              "id": "all",
+              "title": "Operations, Patterns, Cycles"
+            },
+            {
+              "id": "patterns",
+              "title": "Patterns"
+            }
+          ]
+        },
+        "writeMachine": {
+          "description": "Output the machine settings in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write machine",
+          "type": "boolean",
+          "value": true
+        },
+        "writeTools": {
+          "description": "Output a tool list in the header of the program.",
+          "group": "formats",
+          "scope": "post",
+          "title": "Write tool list",
+          "type": "boolean",
+          "value": true
+        }
+      },
+      "propertyGroups": {
+        "configuration": {
+          "collapsed": true,
+          "description": "Configuration options",
+          "order": 10,
+          "title": "Configuration"
+        },
+        "formats": {
+          "collapsed": true,
+          "description": "NC code format settings",
+          "order": 50,
+          "title": "Formats"
+        },
+        "homePositions": {
+          "collapsed": true,
+          "description": "Settings related to safe retracts and home positioning",
+          "order": 30,
+          "title": "Safe retracts and home positioning"
+        },
+        "multiAxis": {
+          "collapsed": true,
+          "description": "Multi-axis settings",
+          "order": 40,
+          "title": "Multi-axis"
+        },
+        "operation": {
+          "collapsed": true,
+          "description": "Operation options",
+          "order": -1,
+          "title": "Operation"
+        },
+        "preferences": {
+          "collapsed": false,
+          "description": "User preferences",
+          "order": 20,
+          "title": "Preferences"
+        },
+        "probing": {
+          "collapsed": true,
+          "description": "Probing and inspection settings",
+          "order": 60,
+          "title": "Probing and inspection"
+        }
+      },
+      "revision": 44168,
+      "securityRequirements": "",
+      "source": "C:/Users/Administrator/AppData/Roaming/Autodesk/Fusion 360 CAM/Posts/fanuc.cps",
+      "tolerance": 0.002,
+      "unit": 0,
+      "vendor": "Fanuc",
+      "vendorUrl": "http://www.fanuc.com",
+      "wcsDefinitions": {
+        "useZeroOffset": false,
+        "wcs": [
+          {
+            "format": "G",
+            "name": "Standard",
+            "range": [54, 59]
+          },
+          {
+            "format": "G54.1 P",
+            "name": "Extended",
+            "range": [1, 300]
+          }
+        ]
+      }
+    },
+    "modification": "178524:13389131673493943",
+    "sandbox": true,
+    "version": 1
+  }
+}
